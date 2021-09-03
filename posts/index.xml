@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Posts on Knight&#39;s Blog</title>
+        <title>Posts on Cyber Knight</title>
         <link>https://cyberknight777.dev/posts/</link>
-        <description>Recent content in Posts on Knight&#39;s Blog</description>
+        <description>Recent content in Posts on Cyber Knight</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <lastBuildDate>Fri, 03 Sep 2021 01:22:03 +0800</lastBuildDate>
@@ -10,10 +10,10 @@
         
         <item>
             <title>My First Post</title>
-            <link>https://cyberknight777.dev/posts/my-first-post/</link>
+            <link>https://cyberknight777.dev/posts/2021/09/my-first-post/</link>
             <pubDate>Fri, 03 Sep 2021 01:22:03 +0800</pubDate>
             
-            <guid>https://cyberknight777.dev/posts/my-first-post/</guid>
+            <guid>https://cyberknight777.dev/posts/2021/09/my-first-post/</guid>
             <description>Hiya Welcome to my first post This site was generated using Hugo.</description>
             <content type="html"><![CDATA[<h1 id="hiya">Hiya</h1>
 <h3 id="welcome-to-my-first-post">Welcome to my first post</h3>

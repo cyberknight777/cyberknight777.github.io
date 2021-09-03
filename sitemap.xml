@@ -2,10 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://cyberknight777.dev/about/</loc>
+    <lastmod>2021-09-04T01:50:45+08:00</lastmod>
+  </url><url>
+    <loc>https://cyberknight777.dev/downloads/</loc>
+    <lastmod>2021-09-04T00:59:20+08:00</lastmod>
+  </url><url>
+    <loc>https://cyberknight777.dev/key/</loc>
+    <lastmod>2021-09-03T20:45:11+08:00</lastmod>
+  </url><url>
     <loc>https://cyberknight777.dev/</loc>
     <lastmod>2021-09-03T01:22:03+08:00</lastmod>
   </url><url>
-    <loc>https://cyberknight777.dev/posts/my-first-post/</loc>
+    <loc>https://cyberknight777.dev/posts/2021/09/my-first-post/</loc>
     <lastmod>2021-09-03T01:22:03+08:00</lastmod>
   </url><url>
     <loc>https://cyberknight777.dev/posts/</loc>
