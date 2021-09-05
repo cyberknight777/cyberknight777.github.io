@@ -9,10 +9,30 @@
     <description>Recent content on Cyber Knight</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Sep 2021 01:22:03 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 06 Sep 2021 02:50:39 +0800</lastBuildDate>
     
 	<atom:link href="https://cyberknight777.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to Rebase a Kernel</title>
+      <link>https://cyberknight777.dev/posts/2021/09/how-to-rebase-a-kernel/</link>
+      <pubDate>Mon, 06 Sep 2021 02:50:39 +0800</pubDate>
+      
+      <guid>https://cyberknight777.dev/posts/2021/09/how-to-rebase-a-kernel/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Introduction Well, I was feeling bored so I was chatting with a dude called Anurag in a group called DEs/WMs regarding android kernels then he told me how his kernel was underperforming even after ricing it alot. I suggested him to rebase his kernel and he said he was unclear about the mentioned topic, so I wrote a long message onto how one can rebase a kernel and I thought that I should write it as a post in my site.
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>~&gt; whoami</title>
