@@ -5,8 +5,24 @@
         <description>Recent content in Posts on Cyber Knight</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 06 Sep 2021 02:50:39 +0800</lastBuildDate>
+        <lastBuildDate>Fri, 17 Sep 2021 14:36:09 +0800</lastBuildDate>
         <atom:link href="https://cyberknight777.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>In the making: SpamProtection-rs</title>
+            <link>https://cyberknight777.dev/posts/2021/09/in-the-making-spamprotection-rs/</link>
+            <pubDate>Fri, 17 Sep 2021 14:36:09 +0800</pubDate>
+            
+            <guid>https://cyberknight777.dev/posts/2021/09/in-the-making-spamprotection-rs/</guid>
+            <description>It all started 3 months ago when Intellivoid released their Go wrapper for the SpamProtection API. Since I&amp;rsquo;m a Rustacean, I intended to make a Rust wrapper for the SpamProtection API. I knew for a fact that this wasn&amp;rsquo;t a one-man job, So I pinged Pero regarding this and he was interested in it too.
+Then, Intellivoid server faced a data corruption in which all their services went down for about 2 months.</description>
+            <content type="html"><![CDATA[<p>It all started 3 months ago when <a href="https://github.com/intellivoid">Intellivoid</a> released their Go wrapper for the <a href="https://github.com/intellivoid/intellivoid.spamprotection-go">SpamProtection API</a>. Since I&rsquo;m a Rustacean, I intended to make a Rust wrapper for the SpamProtection API. I knew for a fact that this wasn&rsquo;t a one-man job, So I pinged <a href="https://github.com/perosar">Pero</a> regarding this and he was interested in it too.</p>
+<p>Then, Intellivoid server faced a data corruption in which all their services went down for about 2 months. There was no progress in that 2 months. After 2 months, their services slowly started coming up and then at one point the API got up. What we did is that we started development of spb-rs. We initially made the request to the api via reqwest but we didn&rsquo;t parse the JSON output. So Pero came with an idea to parse the JSON by declaring structs.</p>
+<p>Pero made the initial base of the code with structs and all and pushed it to our <a href="https://github.com/cyberknight777/spamprotection-rs">repo</a>. Then I started declaring more methods and structs for ease of use. We worked on it for about 2 days straight till we got it stable and working.</p>
+<p>Then we publicised the repo and we started getting suggestions from people. Some suggested that we should use convenience methods for faster output. Some suggested we rewrite the whole repetition of using the User variable again and again. We worked on all the suggestions and then I spoke to <a href="https://github.com/netkas">Netkas</a> regarding SpamProtection-rs. I wanted to make this project an official product of Intellivoid.</p>
+<p>Netkas explained of what we could do with the project, and I agreed with it. Now SpamProtection-rs is an official product of Intellivoid. We&rsquo;ve shifted the repo to the official org on github. Here&rsquo;s the new link to our project: <a href="https://github.com/intellivoid/spamprotection-rust">SpamProtection-rs</a> We will improve more on SPB-rs soon, stay tuned!</p>
+]]></content>
+        </item>
         
         <item>
             <title>How to Rebase a Kernel</title>
@@ -42,7 +58,7 @@ git merge FETCH_HEAD
 git merge -s ours --no-commit --allow-unrelated-histories --squash FETCH_HEAD
 </code></pre></div><p>Once that is done, you can start building your kernel and fixing mismerges if any. There is an alternative way to import oem changes manually with better commit history. You can read more about it <strong><a href="https://t.me/LinuxKernelNewbies/183745">here</a></strong>.</p>
 <p>Let&rsquo;s say your OEM releases their kernel source as a tarball like Samsung does, what you can do is manually copy pasting each directories from the tarball onto the kernel base, or add the patch that I will be sharing below in the Makefile of the OEM kernel source, rename the OEM kernel source as <code>oem</code>, place it inside of the kernel base and run <code>make ARCH=arm64</code>.</p>
-<pre><code class="language-git" data-lang="git">diff --git a/Makefile b/Makefile
+<pre tabindex="0"><code class="language-git" data-lang="git">diff --git a/Makefile b/Makefile
 index 4c3b137a7000..d588668d76a8 100644
 --- a/Makefile
 +++ b/Makefile
