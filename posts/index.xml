@@ -5,8 +5,109 @@
         <description>Recent content in Posts on Cyber Knight</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 17 Sep 2021 14:36:09 +0800</lastBuildDate>
+        <lastBuildDate>Sun, 19 Sep 2021 21:38:28 +0800</lastBuildDate>
         <atom:link href="https://cyberknight777.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Git - Tips and Tricks [PART 1]</title>
+            <link>https://cyberknight777.dev/posts/2021/09/git-tips-and-tricks-part-1/</link>
+            <pubDate>Sun, 19 Sep 2021 21:38:28 +0800</pubDate>
+            
+            <guid>https://cyberknight777.dev/posts/2021/09/git-tips-and-tricks-part-1/</guid>
+            <description>Introduction Git is a very useful utility. There are alot of ways to do one particular thing. This post is made to share what I know and use in git. Bear in mind, I won&amp;rsquo;t be touching the basics as if you&amp;rsquo;re reading this post, I assume that you know the basics of git.
+Making commits It is wise for one to make proper commit history for their project. A proper commit history provides clarity onto what is the progress of the project while makes it easier to find bugs if any.</description>
+            <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
+<p><strong><a href="https://git-scm.com">Git</a></strong> is a very useful utility. There are alot of ways to do one particular thing. This post is made to share what I know and use in git. Bear in mind, I won&rsquo;t be touching the basics as if you&rsquo;re reading this post, I assume that you know the basics of git.</p>
+<h3 id="making-commits">Making commits</h3>
+<p>It is wise for one to make proper commit history for their project. A proper commit history provides clarity onto what is the progress of the project while makes it easier to find bugs if any. You can make any kind of explanatory commits but my personal preference is the format &ldquo;prefix: what you have changed&rdquo; with an optional explanation. Prefix would be the file and/or directory name that you have modified.</p>
+<ul>
+<li>Let&rsquo;s say you&rsquo;ve made a commit but there&rsquo;s a typo in the commit message, what you can do is use the <code>--amend</code> option in git. The syntax goes as below:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git commit --amend -m <span style="color:#e6db74">&#34;new commit message&#34;</span>
+</code></pre></div><ul>
+<li>Next, let&rsquo;s say you would want to add a co-author to your commit, here&rsquo;s how one would do it:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git commit -m <span style="color:#e6db74">&#34;your commit message&#34;</span> -m <span style="color:#e6db74">&#34;Co-authored-by: name &lt;name@mail.com&gt;&#34;</span>
+</code></pre></div><ul>
+<li>Maybe you are using someone else&rsquo;s work and you do want to add author, the best way for this would be to use the <code>--author</code> option. Here&rsquo;s how it goes:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git commit -m <span style="color:#e6db74">&#34;your commit message&#34;</span> --author <span style="color:#e6db74">&#34;name &lt;name@mail.com&gt;&#34;</span>
+</code></pre></div><h3 id="fixing-commit-history">Fixing commit history</h3>
+<ul>
+<li>Let&rsquo;s say you&rsquo;ve made some bad commits and would like to erase it, I&rsquo;d suggest resetting hard and force pushing. Get the commit hash of the commit before the messed up commits and run this command:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git reset --hard commitHash
+</code></pre></div><ul>
+<li>Then you can either make proper commits and/or force push by this:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git push -f
+</code></pre></div><ul>
+<li>You can also squash your commits and force push. With the commit hash of the commit before the messed up commits, run this command:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git rebase -i commitHash
+</code></pre></div><ul>
+<li>Then you probably would end up in vim(in my case that&rsquo;s my preferred editor for git). In vim, you can do this:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">:%<span style="color:#a6e22e">s</span><span style="color:#e6db74">/pick/</span><span style="color:#a6e22e">squash</span>/<span style="color:#a6e22e">g</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><ul>
+<li>
+<p>If you&rsquo;re using any other editor, find out if there&rsquo;s any regex features in your editor or just manually swap it to squash.</p>
+</li>
+<li>
+<p>Then replace the first squash with pick and save.</p>
+</li>
+<li>
+<p>Then you&rsquo;ll come to the commit message screen, I&rsquo;d suggest adding a <em>[SQUASH]: what you&rsquo;ve changed</em> for better clarity.</p>
+</li>
+<li>
+<p>Save it and exit. Then you&rsquo;re done.</p>
+</li>
+</ul>
+<h3 id="checking-commit-history">Checking commit history</h3>
+<p>You can check your commit history with git too. There&rsquo;s a choice for you to either look at a specific commit content or the entire repository&rsquo;s commit history or even both at the same time.</p>
+<ul>
+<li>For looking at the commit history in general you can do this:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git log
+</code></pre></div><ul>
+<li>For looking at the commit history in a oneliner you can do this:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git log --oneline
+</code></pre></div><ul>
+<li>For looking at the commit history and the content of each commits:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git log -p
+</code></pre></div><ul>
+<li>For looking at the commit content of a specific commit:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git show commitHash
+</code></pre></div><h3 id="picking-commits-from-other-repositories">Picking commits from other repositories</h3>
+<p>You can pick commmits from other repositories in several ways. You can either fetch the repository and pick it or wget the commit as a patch and apply it with <code>git am</code>.</p>
+<ul>
+<li>To fetch the repository and pick a couple of commits, first fetch the repo and then grab the commit hash of the commit before the HEAD of the commit you wanna pick and the commit hash before the first commit you would want to pick. Here&rsquo;s how it goes:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git fetch https://linktorepo.com branch
+git cherry-pick startHash^...endHash
+</code></pre></div><ul>
+<li>To pick one commit from a repository, you&rsquo;ll need to wget it as a patch, I&rsquo;m sure most Git repository hosting services have the option to download commits as patches. So here&rsquo;s how it&rsquo;d go:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">wget https://linktopatch.com/xyz.patch
+git am xyz.patch
+</code></pre></div><h3 id="merging-branchestags">Merging branches/tags</h3>
+<p>You can merge branches or tags from other repositories by either fetching and merging them or directly merging them. In my opinion, there&rsquo;s hardly any difference between fetching and merging vs directly merging them.</p>
+<ul>
+<li>To merge a branch/tag of a specific repository by fetching and merging it:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git fetch https://linktorepo.com branch/tag
+git merge FETCH_HEAD
+</code></pre></div><ul>
+<li>To merge a branch/tag of a specific repository by directly merging it:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git pull https://linktorepo.com branch/tag
+</code></pre></div><h2 id="conclusion">Conclusion</h2>
+<p>At this point, I believe I can write more but it would be better to split it into a 2nd post. Hope this post helped and stay tuned for the 2nd post :)</p>
+]]></content>
+        </item>
         
         <item>
             <title>In the making: SpamProtection-rs</title>

@@ -9,10 +9,31 @@
     <description>Recent content on Cyber Knight</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 Sep 2021 14:36:09 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 19 Sep 2021 21:38:28 +0800</lastBuildDate>
     
 	<atom:link href="https://cyberknight777.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Git - Tips and Tricks [PART 1]</title>
+      <link>https://cyberknight777.dev/posts/2021/09/git-tips-and-tricks-part-1/</link>
+      <pubDate>Sun, 19 Sep 2021 21:38:28 +0800</pubDate>
+      
+      <guid>https://cyberknight777.dev/posts/2021/09/git-tips-and-tricks-part-1/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Introduction Git is a very useful utility. There are alot of ways to do one particular thing. This post is made to share what I know and use in git. Bear in mind, I won&amp;rsquo;t be touching the basics as if you&amp;rsquo;re reading this post, I assume that you know the basics of git.
+Making commits It is wise for one to make proper commit history for their project. A proper commit history provides clarity onto what is the progress of the project while makes it easier to find bugs if any.
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>In the making: SpamProtection-rs</title>
