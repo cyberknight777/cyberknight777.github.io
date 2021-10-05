@@ -15,6 +15,30 @@
     
     
     <item>
+      <title>F.A.Q</title>
+      <link>https://cyberknight777.dev/faq/</link>
+      <pubDate>Tue, 05 Oct 2021 20:29:23 +0800</pubDate>
+      
+      <guid>https://cyberknight777.dev/faq/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          This F.A.Q post is for you to know the answers for the questions you may have.
+Q: Does DragonHeart for OP7 work in SDCARDFS roms ?
+A: At the date of writing this post (05/10/2021), DragonHeart does not support SDCARDFS roms as due to some weird issue, it does not boot on most SDCARDFS roms.
+Q: Does DragonHeart for OP7 boot in OxygenOS ?
+A: At the date of writing this post (05/10/2021), It boots on OxygenOS for OP7 series but not on OxygenOS for OP7T series.
+          
+        
+        </description>
+    </item>
+    
+    <item>
       <title>Git - Tips and Tricks [PART 1]</title>
       <link>https://cyberknight777.dev/posts/2021/09/git-tips-and-tricks-part-1/</link>
       <pubDate>Sun, 19 Sep 2021 21:38:28 +0800</pubDate>
