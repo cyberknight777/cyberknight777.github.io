@@ -120,11 +120,11 @@ I primarly do android kernel development(not a pro). In my opinion, a kernel is 
     </item>
     
     <item>
-      <title>Downloads</title>
-      <link>https://cyberknight777.dev/downloads/</link>
+      <title>Release Candidate 1 For OP7</title>
+      <link>https://cyberknight777.dev/downloads/rc1/</link>
       <pubDate>Sat, 04 Sep 2021 00:59:20 +0800</pubDate>
       
-      <guid>https://cyberknight777.dev/downloads/</guid>
+      <guid>https://cyberknight777.dev/downloads/rc1/</guid>
       <description>
         
           
@@ -133,7 +133,7 @@ I primarly do android kernel development(not a pro). In my opinion, a kernel is 
         
         
         
-          DragonHeart kernel for OP7 Release Name: rc1
+          DragonHeart kernel Release Name: rc1
 Release Date: 2021-11-11
 Release Type: Stable
 Build Number: 193
