@@ -133,7 +133,13 @@ I primarly do android kernel development(not a pro). In my opinion, a kernel is 
         
         
         
-          DragonHeart kernel for OP7 Releasing soon™️
+          DragonHeart kernel for OP7 Release Name: rc1
+Release Date: 2021-11-11
+Release Type: Stable
+Build Number: 193
+Download: DragonHeart-op7-rc1.zip
+MD5 Checksum: 67571b1c0b06e0e51616195293ed6567
+Changelog  rebased off LA.UM.9.1.r1-11300-SMxxx0.0 imported wlan and techpack off LA.UM.9.1.r1-11300-SMxxx0.0 build rmnet extensions switch to power_efficient workingqueue for techpack optimize techpack for size and nuke debug information on it reduce debugging in qcacld optimize qcacld for size and nuke debug information on it switch to power efficient workingqueue for qca-wifi-host-cmn upstreamed dtc to v1.
           
         
         </description>
