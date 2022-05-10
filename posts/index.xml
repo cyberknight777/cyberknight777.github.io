@@ -23,33 +23,33 @@ Making commits It is wise for one to make proper commit history for their projec
 <ul>
 <li>Let&rsquo;s say you&rsquo;ve made a commit but there&rsquo;s a typo in the commit message, what you can do is use the <code>--amend</code> option in git. The syntax goes as below:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git commit --amend -m <span style="color:#e6db74">&#34;new commit message&#34;</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git commit --amend -m <span style="color:#e6db74">&#34;new commit message&#34;</span>
+</span></span></code></pre></div><ul>
 <li>Next, let&rsquo;s say you would want to add a co-author to your commit, here&rsquo;s how one would do it:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git commit -m <span style="color:#e6db74">&#34;your commit message&#34;</span> -m <span style="color:#e6db74">&#34;Co-authored-by: name &lt;name@mail.com&gt;&#34;</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;your commit message&#34;</span> -m <span style="color:#e6db74">&#34;Co-authored-by: name &lt;name@mail.com&gt;&#34;</span>
+</span></span></code></pre></div><ul>
 <li>Maybe you are using someone else&rsquo;s work and you do want to add author, the best way for this would be to use the <code>--author</code> option. Here&rsquo;s how it goes:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git commit -m <span style="color:#e6db74">&#34;your commit message&#34;</span> --author <span style="color:#e6db74">&#34;name &lt;name@mail.com&gt;&#34;</span>
-</code></pre></div><h3 id="fixing-commit-history">Fixing commit history</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;your commit message&#34;</span> --author <span style="color:#e6db74">&#34;name &lt;name@mail.com&gt;&#34;</span>
+</span></span></code></pre></div><h3 id="fixing-commit-history">Fixing commit history</h3>
 <ul>
 <li>Let&rsquo;s say you&rsquo;ve made some bad commits and would like to erase it, I&rsquo;d suggest resetting hard and force pushing. Get the commit hash of the commit before the messed up commits and run this command:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git reset --hard commitHash
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git reset --hard commitHash
+</span></span></code></pre></div><ul>
 <li>Then you can either make proper commits and/or force push by this:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git push -f
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git push -f
+</span></span></code></pre></div><ul>
 <li>You can also squash your commits and force push. With the commit hash of the commit before the messed up commits, run this command:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git rebase -i commitHash
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git rebase -i commitHash
+</span></span></code></pre></div><ul>
 <li>Then you probably would end up in vim(in my case that&rsquo;s my preferred editor for git). In vim, you can do this:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">:%<span style="color:#a6e22e">s</span><span style="color:#e6db74">/pick/</span><span style="color:#a6e22e">squash</span>/<span style="color:#a6e22e">g</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span>:%<span style="color:#a6e22e">s</span><span style="color:#e6db74">/pick/</span><span style="color:#a6e22e">squash</span>/<span style="color:#a6e22e">g</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><ul>
 <li>
 <p>If you&rsquo;re using any other editor, find out if there&rsquo;s any regex features in your editor or just manually swap it to squash.</p>
 </li>
@@ -68,43 +68,43 @@ Making commits It is wise for one to make proper commit history for their projec
 <ul>
 <li>For looking at the commit history in general you can do this:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git log
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git log
+</span></span></code></pre></div><ul>
 <li>For looking at the commit history in a oneliner you can do this:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git log --oneline
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git log --oneline
+</span></span></code></pre></div><ul>
 <li>For looking at the commit history and the content of each commits:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git log -p
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git log -p
+</span></span></code></pre></div><ul>
 <li>For looking at the commit content of a specific commit:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git show commitHash
-</code></pre></div><h3 id="picking-commits-from-other-repositories">Picking commits from other repositories</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git show commitHash
+</span></span></code></pre></div><h3 id="picking-commits-from-other-repositories">Picking commits from other repositories</h3>
 <p>You can pick commmits from other repositories in several ways. You can either fetch the repository and pick it or wget the commit as a patch and apply it with <code>git am</code>.</p>
 <ul>
 <li>To fetch the repository and pick a couple of commits, first fetch the repo and then grab the commit hash of the commit before the HEAD of the commit you wanna pick and the commit hash before the first commit you would want to pick. Here&rsquo;s how it goes:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git fetch https://linktorepo.com branch
-git cherry-pick startHash^...endHash
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git fetch https://linktorepo.com branch
+</span></span><span style="display:flex;"><span>git cherry-pick startHash^...endHash
+</span></span></code></pre></div><ul>
 <li>To pick one commit from a repository, you&rsquo;ll need to wget it as a patch, I&rsquo;m sure most Git repository hosting services have the option to download commits as patches. So here&rsquo;s how it&rsquo;d go:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">wget https://linktopatch.com/xyz.patch
-git am xyz.patch
-</code></pre></div><h3 id="merging-branchestags">Merging branches/tags</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wget https://linktopatch.com/xyz.patch
+</span></span><span style="display:flex;"><span>git am xyz.patch
+</span></span></code></pre></div><h3 id="merging-branchestags">Merging branches/tags</h3>
 <p>You can merge branches or tags from other repositories by either fetching and merging them or directly merging them. In my opinion, there&rsquo;s hardly any difference between fetching and merging vs directly merging them.</p>
 <ul>
 <li>To merge a branch/tag of a specific repository by fetching and merging it:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git fetch https://linktorepo.com branch/tag
-git merge FETCH_HEAD
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git fetch https://linktorepo.com branch/tag
+</span></span><span style="display:flex;"><span>git merge FETCH_HEAD
+</span></span></code></pre></div><ul>
 <li>To merge a branch/tag of a specific repository by directly merging it:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git pull https://linktorepo.com branch/tag
-</code></pre></div><h2 id="conclusion">Conclusion</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git pull https://linktorepo.com branch/tag
+</span></span></code></pre></div><h2 id="conclusion">Conclusion</h2>
 <p>At this point, I believe I can write more but it would be better to split it into a 2nd post. Hope this post helped and stay tuned for the 2nd post :)</p>
 ]]></content>
         </item>
@@ -149,15 +149,15 @@ Then, Intellivoid server faced a data corruption in which all their services wen
 <h3 id="importing-oem-changes">Importing OEM changes</h3>
 <p><strong>Remember, If your OEM kernel source is a Q base, use a Q base kernel from CAF or ACK. Do not use a R base kernel for Q based OEM kernel as it would not work and would throw alot of git conflicts!</strong></p>
 <p>Let&rsquo;s say your OEM releases their kernel source code in <a href="https://github.com">GitHub</a>, the easiest way you can import their changes would be to merge their kernel source. This is an example of how a OnePlus 7 kernel source code for R can be merged on a CAF base.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git fetch https://github.com/oneplusoss/android_kernel_oneplus_sm8150 oneplus/SM8150_R_10.0
-
-git merge FETCH_HEAD
-</code></pre></div><p>Then of course, you&rsquo;ll have some git conflicts in which you should have the knowledge to compare and fix it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git fetch https://github.com/oneplusoss/android_kernel_oneplus_sm8150 oneplus/SM8150_R_10.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git merge FETCH_HEAD
+</span></span></code></pre></div><p>Then of course, you&rsquo;ll have some git conflicts in which you should have the knowledge to compare and fix it.</p>
 <p><strong>Keep in mind there are some OEMs that release some important drivers in a seperate repository so merge them like I do below for my audio driver.</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git fetch https://github.com/OnePlusOSS/android_vendor_qcom_opensource_audio_kernel_sm8150 oneplus/SM8150_R_10.0
-
-git merge -s ours --no-commit --allow-unrelated-histories --squash FETCH_HEAD
-</code></pre></div><p>Once that is done, you can start building your kernel and fixing mismerges if any. There is an alternative way to import oem changes manually with better commit history. You can read more about it <strong><a href="https://t.me/LinuxKernelNewbies/183745">here</a></strong>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git fetch https://github.com/OnePlusOSS/android_vendor_qcom_opensource_audio_kernel_sm8150 oneplus/SM8150_R_10.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git merge -s ours --no-commit --allow-unrelated-histories --squash FETCH_HEAD
+</span></span></code></pre></div><p>Once that is done, you can start building your kernel and fixing mismerges if any. There is an alternative way to import oem changes manually with better commit history. You can read more about it <strong><a href="https://t.me/LinuxKernelNewbies/183745">here</a></strong>.</p>
 <p>Let&rsquo;s say your OEM releases their kernel source as a tarball like Samsung does, what you can do is manually copy pasting each directories from the tarball onto the kernel base, or add the patch that I will be sharing below in the Makefile of the OEM kernel source, rename the OEM kernel source as <code>oem</code>, place it inside of the kernel base and run <code>make ARCH=arm64</code>.</p>
 <pre tabindex="0"><code class="language-git" data-lang="git">diff --git a/Makefile b/Makefile
 index 4c3b137a7000..d588668d76a8 100644

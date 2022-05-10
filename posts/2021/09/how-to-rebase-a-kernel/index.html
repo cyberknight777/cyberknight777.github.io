@@ -177,15 +177,15 @@
 <h3 id="importing-oem-changes">Importing OEM changes</h3>
 <p><strong>Remember, If your OEM kernel source is a Q base, use a Q base kernel from CAF or ACK. Do not use a R base kernel for Q based OEM kernel as it would not work and would throw alot of git conflicts!</strong></p>
 <p>Let&rsquo;s say your OEM releases their kernel source code in <a href="https://github.com">GitHub</a>, the easiest way you can import their changes would be to merge their kernel source. This is an example of how a OnePlus 7 kernel source code for R can be merged on a CAF base.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git fetch https://github.com/oneplusoss/android_kernel_oneplus_sm8150 oneplus/SM8150_R_10.0
-
-git merge FETCH_HEAD
-</code></pre></div><p>Then of course, you&rsquo;ll have some git conflicts in which you should have the knowledge to compare and fix it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git fetch https://github.com/oneplusoss/android_kernel_oneplus_sm8150 oneplus/SM8150_R_10.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git merge FETCH_HEAD
+</span></span></code></pre></div><p>Then of course, you&rsquo;ll have some git conflicts in which you should have the knowledge to compare and fix it.</p>
 <p><strong>Keep in mind there are some OEMs that release some important drivers in a seperate repository so merge them like I do below for my audio driver.</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git fetch https://github.com/OnePlusOSS/android_vendor_qcom_opensource_audio_kernel_sm8150 oneplus/SM8150_R_10.0
-
-git merge -s ours --no-commit --allow-unrelated-histories --squash FETCH_HEAD
-</code></pre></div><p>Once that is done, you can start building your kernel and fixing mismerges if any. There is an alternative way to import oem changes manually with better commit history. You can read more about it <strong><a href="https://t.me/LinuxKernelNewbies/183745">here</a></strong>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git fetch https://github.com/OnePlusOSS/android_vendor_qcom_opensource_audio_kernel_sm8150 oneplus/SM8150_R_10.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git merge -s ours --no-commit --allow-unrelated-histories --squash FETCH_HEAD
+</span></span></code></pre></div><p>Once that is done, you can start building your kernel and fixing mismerges if any. There is an alternative way to import oem changes manually with better commit history. You can read more about it <strong><a href="https://t.me/LinuxKernelNewbies/183745">here</a></strong>.</p>
 <p>Let&rsquo;s say your OEM releases their kernel source as a tarball like Samsung does, what you can do is manually copy pasting each directories from the tarball onto the kernel base, or add the patch that I will be sharing below in the Makefile of the OEM kernel source, rename the OEM kernel source as <code>oem</code>, place it inside of the kernel base and run <code>make ARCH=arm64</code>.</p>
 <pre tabindex="0"><code class="language-git" data-lang="git">diff --git a/Makefile b/Makefile
 index 4c3b137a7000..d588668d76a8 100644
@@ -411,7 +411,7 @@ async>
 
 
 
-<script type="text/javascript" src="/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
+<script type="text/javascript" src="/bundle.min.a2c5b062c87998f04d1b5dfb6a89a1b2d79786c21d0cb63a05e8a2082984b64b77d80955e3b97eab17273775162ba372511b711fea2f7608f216e68a67bb22d6.js" integrity="sha512-osWwYsh5mPBNG137aomhsteXhsIdDLY6BeiiCCmEtkt32AlV47l&#43;qxcnN3UWK6NyURtxH&#43;ovdgjyFuaKZ7si1g=="></script>
 
 
 
