@@ -8,7 +8,7 @@
     <link>https://cyberknight777.dev/</link>
     <description>Recent content on Cyber Knight</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <lastBuildDate>Thu, 11 Nov 2021 00:59:20 +0800</lastBuildDate>
     
 	<atom:link href="https://cyberknight777.dev/index.xml" rel="self" type="application/rss+xml" />
@@ -54,9 +54,12 @@ Changelog rebased off LA.UM.9.1.r1-11300-SMxxx0.0 imported wlan and techpack off
         
         
         
-          If you&amp;rsquo;re reading this, either you&amp;rsquo;ve been redirected by myself when you PM&amp;rsquo;d me or you&amp;rsquo;re just bored and wanted to read this. Nonetheless, don&amp;rsquo;t PM me in case if your questions are relevant in any of the below questions.
+          If you&amp;rsquo;re reading this, there is a high possibility that you have been redirected by myself when you privately messaged me or you&amp;rsquo;re just bored and wanted to read this. Nonetheless, don&amp;rsquo;t privately message me if your questions have been answered in this FAQ.
 Q: Does DragonHeart for OP7 work in SDCARDFS roms ?
-A: At the date of writing this post (05/10/2021), DragonHeart does not support SDCARDFS roms as due to some weird issue, it does not boot on most SDCARDFS roms.
+A: No.
+Q: Does DragonHeart for OP7 boot in OxygenOS ?
+A: No.
+Q: Can I flash DragonHeart on a different ROM ?
           
         
         </description>
@@ -139,7 +142,7 @@ Then, Intellivoid server faced a data corruption in which all their services wen
         
         
           I&amp;rsquo;m knight, a 20 year old, you may know me as cyberknight777 on most social media platforms.
-I primarly do android kernel development(not a pro). In my opinion, a kernel is like a baby, where you gotta set a pathway for the child&amp;rsquo;s life and how to bring it up in the world. Same concept applies here. You choose what you want for your kernel which makes it stable and mature.
+I primarly do android kernel development(not a pro). In my opinion, a kernel is like a baby, where you gotta set a pathway for the child&amp;rsquo;s life and how to bring it up in the world. The same concept applies here. You choose what you want for your kernel which makes it stable and mature.
           
         
         </description>

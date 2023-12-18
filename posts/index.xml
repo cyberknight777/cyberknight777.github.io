@@ -4,7 +4,7 @@
         <link>https://cyberknight777.dev/posts/</link>
         <description>Recent content in Posts on Cyber Knight</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language>
+        <language>en</language>
         <lastBuildDate>Sun, 19 Sep 2021 21:38:28 +0800</lastBuildDate>
         <atom:link href="https://cyberknight777.dev/posts/index.xml" rel="self" type="application/rss+xml" />
         
@@ -48,8 +48,8 @@ Making commits It is wise for one to make proper commit history for their projec
 </span></span></code></pre></div><ul>
 <li>Then you probably would end up in vim(in my case that&rsquo;s my preferred editor for git). In vim, you can do this:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span>:%<span style="color:#a6e22e">s</span><span style="color:#e6db74">/pick/</span><span style="color:#a6e22e">squash</span>/<span style="color:#a6e22e">g</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span>:%<span style="color:#a6e22e">s</span><span style="color:#e6db74">/pick/</span><span style="color:#a6e22e">squash</span>/<span style="color:#a6e22e">g</span>
+</span></span></code></pre></div><ul>
 <li>
 <p>If you&rsquo;re using any other editor, find out if there&rsquo;s any regex features in your editor or just manually swap it to squash.</p>
 </li>
