@@ -28,13 +28,146 @@
         
         
         
-          DragonHeart kernel Release Name: rc1
-Release Date: 2021-11-11
-Release Type: Stable
-Build Number: 193
-Download: DragonHeart-op7-rc1.zip
-MD5 Checksum: 67571b1c0b06e0e51616195293ed6567
-Changelog rebased off LA.UM.9.1.r1-11300-SMxxx0.0 imported wlan and techpack off LA.UM.9.1.r1-11300-SMxxx0.0 build rmnet extensions switch to power_efficient workingqueue for techpack optimize techpack for size and nuke debug information on it reduce debugging in qcacld optimize qcacld for size and nuke debug information on it switch to power efficient workingqueue for qca-wifi-host-cmn upstreamed dtc to v1.
+          &lt;h2 id=&#34;dragonheart-kernel&#34;&gt;DragonHeart kernel&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Release Name&lt;/strong&gt;: &lt;em&gt;rc1&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Release Date&lt;/strong&gt;: &lt;em&gt;2021-11-11&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Release Type&lt;/strong&gt;: &lt;em&gt;Stable&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Build Number&lt;/strong&gt;: &lt;em&gt;193&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Download&lt;/strong&gt;: &lt;em&gt;&lt;a href=&#34;https://github.com/cyberknight777/op7_json/raw/master/DragonHeart-op7-rc1.zip&#34;&gt;DragonHeart-op7-rc1.zip&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;MD5 Checksum&lt;/strong&gt;: &lt;em&gt;67571b1c0b06e0e51616195293ed6567&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;changelog&#34;&gt;Changelog&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;rebased off LA.UM.9.1.r1-11300-SMxxx0.0&lt;/li&gt;
+&lt;li&gt;imported wlan and techpack off LA.UM.9.1.r1-11300-SMxxx0.0&lt;/li&gt;
+&lt;li&gt;build rmnet extensions&lt;/li&gt;
+&lt;li&gt;switch to power_efficient workingqueue for techpack&lt;/li&gt;
+&lt;li&gt;optimize techpack for size and nuke debug information on it&lt;/li&gt;
+&lt;li&gt;reduce debugging in qcacld&lt;/li&gt;
+&lt;li&gt;optimize qcacld for size and nuke debug information on it&lt;/li&gt;
+&lt;li&gt;switch to power efficient workingqueue for qca-wifi-host-cmn&lt;/li&gt;
+&lt;li&gt;upstreamed dtc to v1.4.6-9&lt;/li&gt;
+&lt;li&gt;added z order fod commit&lt;/li&gt;
+&lt;li&gt;added cpuidle patches and backports for better deep sleep&lt;/li&gt;
+&lt;li&gt;added -pipes optimization&lt;/li&gt;
+&lt;li&gt;nuked trace_printk()&lt;/li&gt;
+&lt;li&gt;switched to -O3 treewide&lt;/li&gt;
+&lt;li&gt;switched to -O3 for LLD&lt;/li&gt;
+&lt;li&gt;optimized flags for kryo 485&lt;/li&gt;
+&lt;li&gt;optimized for crypto and crc&lt;/li&gt;
+&lt;li&gt;optimized arch specfic code for kryo 485, crypto and crc&lt;/li&gt;
+&lt;li&gt;nuke auditing&lt;/li&gt;
+&lt;li&gt;enabled store motion pass for global common subexpression elimination(GCSE)&lt;/li&gt;
+&lt;li&gt;imported wireguard  v1.0.20210606&lt;/li&gt;
+&lt;li&gt;enabled TTL &amp;amp; HL fixations&lt;/li&gt;
+&lt;li&gt;picked gulch&amp;rsquo;s treewide/oneplus: massive code removal commit&lt;/li&gt;
+&lt;li&gt;cleaned up unneeded synaptic drivers&lt;/li&gt;
+&lt;li&gt;inlined i2c interfaces for touch drivers&lt;/li&gt;
+&lt;li&gt;disable auto test for s3706 driver&lt;/li&gt;
+&lt;li&gt;conditionally compile out auto_test functions&lt;/li&gt;
+&lt;li&gt;enforce msm drm notifier for touch drivers&lt;/li&gt;
+&lt;li&gt;nuke logging in touch driver&lt;/li&gt;
+&lt;li&gt;init touch drivers earlier&lt;/li&gt;
+&lt;li&gt;imported vDSO32&lt;/li&gt;
+&lt;li&gt;switched to -O3 for vDSO32&lt;/li&gt;
+&lt;li&gt;picked masahiro&amp;rsquo;s kbuild commits for quality of life&lt;/li&gt;
+&lt;li&gt;enabled lse_atomics&lt;/li&gt;
+&lt;li&gt;inlined spinlocks&lt;/li&gt;
+&lt;li&gt;enabled DCE&lt;/li&gt;
+&lt;li&gt;picked fp inlining commits for faster fp&lt;/li&gt;
+&lt;li&gt;enforce msm drm notifier for fp&lt;/li&gt;
+&lt;li&gt;enabled OPTIMIZE_INLINING&lt;/li&gt;
+&lt;li&gt;picked power efficient workingqueues treewide&lt;/li&gt;
+&lt;li&gt;picked &amp;amp; enabled BBR&lt;/li&gt;
+&lt;li&gt;switched to WESTWOOD for default tcp congestion algorithm&lt;/li&gt;
+&lt;li&gt;imported srandom&lt;/li&gt;
+&lt;li&gt;switched to srandom over hw_random&lt;/li&gt;
+&lt;li&gt;backported cgroup commits&lt;/li&gt;
+&lt;li&gt;nuked debugging configs&lt;/li&gt;
+&lt;li&gt;upstreamed lz4&lt;/li&gt;
+&lt;li&gt;switched to lz4 as default crypto compression algorithm&lt;/li&gt;
+&lt;li&gt;switched to zswap over zram&lt;/li&gt;
+&lt;li&gt;used vbswap as a fake block device for zswap&lt;/li&gt;
+&lt;li&gt;nuke additional ext4 tracing by caf&lt;/li&gt;
+&lt;li&gt;add haptic level adjustment&lt;/li&gt;
+&lt;li&gt;drop samsung_oneplus_dsc 1080p timings to fix google maps&lt;/li&gt;
+&lt;li&gt;introduced tri-cluster api to affine IRQs&lt;/li&gt;
+&lt;li&gt;introduced cpumasks for big, LITTLE and prime cpu masks&lt;/li&gt;
+&lt;li&gt;affined IRQs treewide&lt;/li&gt;
+&lt;li&gt;introduced sched api to migrate current process to a given cpumask&lt;/li&gt;
+&lt;li&gt;Improved the scheduler and its mechanism(walt) by grabbing patches from CAF &amp;amp; RenderBroken&lt;/li&gt;
+&lt;li&gt;checkout sched/energy to android-4.14-stable to move way from caf&amp;rsquo;s mess&lt;/li&gt;
+&lt;li&gt;introduced devfreq_boost to boost DDR bus on custom events&lt;/li&gt;
+&lt;li&gt;affined hwcomposter to big CPUs&lt;/li&gt;
+&lt;li&gt;imported simple_lmk and tune it for our needs&lt;/li&gt;
+&lt;li&gt;disable CONFIG_DEBUG_KERNEL for lesser debugging&lt;/li&gt;
+&lt;li&gt;introduce f2fs rapid gc&lt;/li&gt;
+&lt;li&gt;introduce cpu_input_boost to boost CPU on custom events&lt;/li&gt;
+&lt;li&gt;speed up mremap by 20x&lt;/li&gt;
+&lt;li&gt;reduce time taken to enter sleep&lt;/li&gt;
+&lt;li&gt;nuked more debugging and tracing&lt;/li&gt;
+&lt;li&gt;switched to cfq as default iosched&lt;/li&gt;
+&lt;li&gt;reduced devfreq wake boost duration to 500ms&lt;/li&gt;
+&lt;li&gt;introduce kprofiles 1.0.0&lt;/li&gt;
+&lt;li&gt;inline active_mode() for faster execution for kprofiles&lt;/li&gt;
+&lt;li&gt;switch to case statement over if/else to reduce latency for kprofiles&lt;/li&gt;
+&lt;li&gt;misc improvement to kprofiles codebase&lt;/li&gt;
+&lt;li&gt;implement display notifiers for auto kprofiles&lt;/li&gt;
+&lt;li&gt;bump kprofiles to 2.0.0&lt;/li&gt;
+&lt;li&gt;take mode=0 into account for active_mode() for kprofiles&lt;/li&gt;
+&lt;li&gt;introduce 2 new api for changing modes on custom events for kprofiles&lt;/li&gt;
+&lt;li&gt;nuke redundant break statement in kprofiles&lt;/li&gt;
+&lt;li&gt;export sysfs to allow user to disable auto kprofiles&lt;/li&gt;
+&lt;li&gt;bump kprofiles to 3.0.0&lt;/li&gt;
+&lt;li&gt;mark more kprofiles functions as inline&lt;/li&gt;
+&lt;li&gt;refactor common notifier of kprofiles to use the new API&lt;/li&gt;
+&lt;li&gt;rename mode 0 of kprofiles to normal for clarity&lt;/li&gt;
+&lt;li&gt;fix build when AUTO_KPROFILES is disabled&lt;/li&gt;
+&lt;li&gt;hardcode battery mode as default&lt;/li&gt;
+&lt;li&gt;boost DDR bus and CPU according to profile set for zygote forking (app launches)&lt;/li&gt;
+&lt;li&gt;boost DDR bus and CPU according to profile set for frame rendering (smoothness)&lt;/li&gt;
+&lt;li&gt;force set freqs to max/min depending on profile set for performance governor&lt;/li&gt;
+&lt;li&gt;increase gpu data processing limit&lt;/li&gt;
+&lt;li&gt;forbid init from changing iosched&lt;/li&gt;
+&lt;li&gt;introduce STREEBOG algorithm for crypto operations&lt;/li&gt;
+&lt;li&gt;reduce logging treewide&lt;/li&gt;
+&lt;li&gt;reduce logging in binder&lt;/li&gt;
+&lt;li&gt;silence log spam when cpu is brought up&lt;/li&gt;
+&lt;li&gt;skip OOM_KILLER when compiled for android&lt;/li&gt;
+&lt;li&gt;nuke rmnet logging&lt;/li&gt;
+&lt;li&gt;disable NL80211_TESTMODE&lt;/li&gt;
+&lt;li&gt;use TCP_NODELAY to improve network latency&lt;/li&gt;
+&lt;li&gt;use an efficient frequency table with an optimized energy model&lt;/li&gt;
+&lt;li&gt;configured minimum idle frequency for better idle drain&lt;/li&gt;
+&lt;li&gt;confugured min freq fallback after boosting for better overall drains&lt;/li&gt;
+&lt;li&gt;switch to 50hz kernel tickrate&lt;/li&gt;
+&lt;li&gt;force gpu idle timeout to 58ms&lt;/li&gt;
+&lt;li&gt;implement rhel&amp;rsquo;s low latency cmdline for less latency&lt;/li&gt;
+&lt;li&gt;power off dsi phy during idle to save more power&lt;/li&gt;
+&lt;li&gt;remove pm qos active latency override&lt;/li&gt;
+&lt;li&gt;nuke display ramdump mem region&lt;/li&gt;
+&lt;li&gt;nuke unused 36 MiB memdump region for less ram usage&lt;/li&gt;
+&lt;li&gt;disable broken IRQ detection&lt;/li&gt;
+&lt;li&gt;enable freq-energy-model to correlate with checkout of sched/energy to android-4.14-stable&lt;/li&gt;
+&lt;li&gt;add new GPU step from CAF&lt;/li&gt;
+&lt;li&gt;enable some panel tweaks for oneplus displays&lt;/li&gt;
+&lt;li&gt;cleanup dtbo building&lt;/li&gt;
+&lt;li&gt;suppress verbose output for cmdline&lt;/li&gt;
+&lt;li&gt;configure frame transfer time to 800us&lt;/li&gt;
+&lt;li&gt;misc improvements to dtsi&lt;/li&gt;
+&lt;li&gt;spoof fake kernel version to fsck&lt;/li&gt;
+&lt;li&gt;mm patches from sultan for overall improvement of mm&lt;/li&gt;
+&lt;li&gt;nuke pm qos implementation in adsp to save power&lt;/li&gt;
+&lt;li&gt;enable RELR relocation packing for smaller image&lt;/li&gt;
+&lt;li&gt;compile out ipa_v3 wakelock code&lt;/li&gt;
+&lt;li&gt;add timeout to wakelocks globally&lt;/li&gt;
+&lt;li&gt;nuke pm qos usage in vidc for less power used during media playback&lt;/li&gt;
+&lt;li&gt;fix misconfigured irq in rpmsg&lt;/li&gt;
+&lt;li&gt;revert logging of interrupts for GICv3&lt;/li&gt;
+&lt;li&gt;built with EvaGCC 12.0.0&lt;/li&gt;
+&lt;li&gt;used LLD 13.0.0 as linker&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;credits&#34;&gt;Credits&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/osm0sis&#34;&gt;@osm0sis&lt;/a&gt;&lt;/strong&gt; for anykernel&lt;/p&gt;
           
         
         </description>
@@ -54,12 +187,12 @@ Changelog rebased off LA.UM.9.1.r1-11300-SMxxx0.0 imported wlan and techpack off
         
         
         
-          If you&amp;rsquo;re reading this, there is a high possibility that you have been redirected by myself when you privately messaged me or you&amp;rsquo;re just bored and wanted to read this. Nonetheless, don&amp;rsquo;t privately message me if your questions have been answered in this FAQ.
-Q: Does DragonHeart for OP7 work in SDCARDFS roms ?
-A: No.
-Q: Does DragonHeart for OP7 boot in OxygenOS ?
-A: No.
-Q: Can I flash DragonHeart on a different ROM ?
+          &lt;p&gt;If you&amp;rsquo;re reading this, there is a high possibility that you have been redirected by myself when you privately messaged me or you&amp;rsquo;re just bored and wanted to read this. Nonetheless, don&amp;rsquo;t privately message me if your questions have been answered in this FAQ.&lt;/p&gt;
+&lt;p&gt;Q: Does DragonHeart for OP7 work in SDCARDFS roms ?&lt;/p&gt;
+&lt;p&gt;A: No.&lt;/p&gt;
+&lt;p&gt;Q: Does DragonHeart for OP7 boot in OxygenOS ?&lt;/p&gt;
+&lt;p&gt;A: No.&lt;/p&gt;
+&lt;p&gt;Q: Can I flash DragonHeart on a different ROM ?&lt;/p&gt;
           
         
         </description>
@@ -79,8 +212,10 @@ Q: Can I flash DragonHeart on a different ROM ?
         
         
         
-          Introduction Git is a very useful utility. There are alot of ways to do one particular thing. This post is made to share what I know and use in git. Bear in mind, I won&amp;rsquo;t be touching the basics as if you&amp;rsquo;re reading this post, I assume that you know the basics of git.
-Making commits It is wise for one to make proper commit history for their project. A proper commit history provides clarity onto what is the progress of the project while makes it easier to find bugs if any.
+          &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://git-scm.com&#34;&gt;Git&lt;/a&gt;&lt;/strong&gt; is a very useful utility. There are alot of ways to do one particular thing. This post is made to share what I know and use in git. Bear in mind, I won&amp;rsquo;t be touching the basics as if you&amp;rsquo;re reading this post, I assume that you know the basics of git.&lt;/p&gt;
+&lt;h3 id=&#34;making-commits&#34;&gt;Making commits&lt;/h3&gt;
+&lt;p&gt;It is wise for one to make proper commit history for their project. A proper commit history provides clarity onto what is the progress of the project while makes it easier to find bugs if any. You can make any kind of explanatory commits but my personal preference is the format &amp;ldquo;prefix: what you have changed&amp;rdquo; with an optional explanation. Prefix would be the file and/or directory name that you have modified.&lt;/p&gt;
           
         
         </description>
@@ -100,8 +235,8 @@ Making commits It is wise for one to make proper commit history for their projec
         
         
         
-          It all started 3 months ago when Intellivoid released their Go wrapper for the SpamProtection API. Since I&amp;rsquo;m a Rustacean, I intended to make a Rust wrapper for the SpamProtection API. I knew for a fact that this wasn&amp;rsquo;t a one-man job, So I pinged Pero regarding this and he was interested in it too.
-Then, Intellivoid server faced a data corruption in which all their services went down for about 2 months.
+          &lt;p&gt;It all started 3 months ago when &lt;a href=&#34;https://github.com/intellivoid&#34;&gt;Intellivoid&lt;/a&gt; released their Go wrapper for the &lt;a href=&#34;https://github.com/intellivoid/intellivoid.spamprotection-go&#34;&gt;SpamProtection API&lt;/a&gt;. Since I&amp;rsquo;m a Rustacean, I intended to make a Rust wrapper for the SpamProtection API. I knew for a fact that this wasn&amp;rsquo;t a one-man job, So I pinged &lt;a href=&#34;https://github.com/perosar&#34;&gt;Pero&lt;/a&gt; regarding this and he was interested in it too.&lt;/p&gt;
+&lt;p&gt;Then, Intellivoid server faced a data corruption in which all their services went down for about 2 months. There was no progress in that 2 months. After 2 months, their services slowly started coming up and then at one point the API got up. What we did is that we started development of spb-rs. We initially made the request to the api via reqwest but we didn&amp;rsquo;t parse the JSON output. So Pero came with an idea to parse the JSON by declaring structs.&lt;/p&gt;
           
         
         </description>
@@ -121,7 +256,8 @@ Then, Intellivoid server faced a data corruption in which all their services wen
         
         
         
-          Introduction Well, I was feeling bored so I was chatting with a dude called Anurag in a group called DEs/WMs regarding android kernels then he told me how his kernel was underperforming even after ricing it alot. I suggested him to rebase his kernel and he said he was unclear about the mentioned topic, so I wrote a long message onto how one can rebase a kernel and I thought that I should write it as a post in my site.
+          &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Well, I was feeling bored so I was chatting with a dude called &lt;a href=&#34;https://t.me/anuragroy&#34;&gt;Anurag&lt;/a&gt; in a group called &lt;a href=&#34;https://t.me/de_wm&#34;&gt;DEs/WMs&lt;/a&gt; regarding android kernels then he told me how his kernel was underperforming even after ricing it alot. I suggested him to rebase his kernel and he said he was unclear about the mentioned topic, so I wrote a long message onto how one can rebase a kernel and I thought that I should write it as a post in my site. So here I am writing this small guide at 04:30 in the morning.&lt;/p&gt;
           
         
         </description>
@@ -141,8 +277,8 @@ Then, Intellivoid server faced a data corruption in which all their services wen
         
         
         
-          I&amp;rsquo;m knight, a 20 year old, you may know me as cyberknight777 on most social media platforms.
-I primarly do android kernel development(not a pro). In my opinion, a kernel is like a baby, where you gotta set a pathway for the child&amp;rsquo;s life and how to bring it up in the world. The same concept applies here. You choose what you want for your kernel which makes it stable and mature.
+          &lt;p&gt;I&amp;rsquo;m knight, a 20 year old, you may know me as cyberknight777 on most social media platforms.&lt;/p&gt;
+&lt;p&gt;I primarly do android kernel development(not a pro). In my opinion, a kernel is like a baby, where you gotta set a pathway for the child&amp;rsquo;s life and how to bring it up in the world. The same concept applies here. You choose what you want for your kernel which makes it stable and mature. I learn something new when I experiment with my kernel.&lt;/p&gt;
           
         
         </description>
@@ -162,7 +298,49 @@ I primarly do android kernel development(not a pro). In my opinion, a kernel is 
         
         
         
-          Here&amp;rsquo;s My Public GPG Key :) -----BEGIN PGP PUBLIC KEY BLOCK----- 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 =2dqE -----END PGP PUBLIC KEY BLOCK----- 
+          &lt;h2 id=&#34;heres-my-public-gpg-key-&#34;&gt;Here&amp;rsquo;s My Public GPG Key :)&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+=2dqE
+-----END PGP PUBLIC KEY BLOCK-----
+&lt;/code&gt;&lt;/pre&gt;
           
         
         </description>
@@ -182,7 +360,9 @@ I primarly do android kernel development(not a pro). In my opinion, a kernel is 
         
         
         
-          Hiya Welcome to my first post This site was generated using Hugo.
+          &lt;h1 id=&#34;hiya&#34;&gt;Hiya&lt;/h1&gt;
+&lt;h3 id=&#34;welcome-to-my-first-post&#34;&gt;Welcome to my first post&lt;/h3&gt;
+&lt;p&gt;This site was generated using Hugo.&lt;/p&gt;
           
         
         </description>

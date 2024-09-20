@@ -14,8 +14,10 @@
             <pubDate>Sun, 19 Sep 2021 21:38:28 +0800</pubDate>
             
             <guid>https://cyberknight777.dev/posts/2021/09/git-tips-and-tricks-part-1/</guid>
-            <description>Introduction Git is a very useful utility. There are alot of ways to do one particular thing. This post is made to share what I know and use in git. Bear in mind, I won&amp;rsquo;t be touching the basics as if you&amp;rsquo;re reading this post, I assume that you know the basics of git.
-Making commits It is wise for one to make proper commit history for their project. A proper commit history provides clarity onto what is the progress of the project while makes it easier to find bugs if any.</description>
+            <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://git-scm.com&#34;&gt;Git&lt;/a&gt;&lt;/strong&gt; is a very useful utility. There are alot of ways to do one particular thing. This post is made to share what I know and use in git. Bear in mind, I won&amp;rsquo;t be touching the basics as if you&amp;rsquo;re reading this post, I assume that you know the basics of git.&lt;/p&gt;
+&lt;h3 id=&#34;making-commits&#34;&gt;Making commits&lt;/h3&gt;
+&lt;p&gt;It is wise for one to make proper commit history for their project. A proper commit history provides clarity onto what is the progress of the project while makes it easier to find bugs if any. You can make any kind of explanatory commits but my personal preference is the format &amp;ldquo;prefix: what you have changed&amp;rdquo; with an optional explanation. Prefix would be the file and/or directory name that you have modified.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
 <p><strong><a href="https://git-scm.com">Git</a></strong> is a very useful utility. There are alot of ways to do one particular thing. This post is made to share what I know and use in git. Bear in mind, I won&rsquo;t be touching the basics as if you&rsquo;re reading this post, I assume that you know the basics of git.</p>
 <h3 id="making-commits">Making commits</h3>
@@ -115,8 +117,8 @@ Making commits It is wise for one to make proper commit history for their projec
             <pubDate>Fri, 17 Sep 2021 14:36:09 +0800</pubDate>
             
             <guid>https://cyberknight777.dev/posts/2021/09/in-the-making-spamprotection-rs/</guid>
-            <description>It all started 3 months ago when Intellivoid released their Go wrapper for the SpamProtection API. Since I&amp;rsquo;m a Rustacean, I intended to make a Rust wrapper for the SpamProtection API. I knew for a fact that this wasn&amp;rsquo;t a one-man job, So I pinged Pero regarding this and he was interested in it too.
-Then, Intellivoid server faced a data corruption in which all their services went down for about 2 months.</description>
+            <description>&lt;p&gt;It all started 3 months ago when &lt;a href=&#34;https://github.com/intellivoid&#34;&gt;Intellivoid&lt;/a&gt; released their Go wrapper for the &lt;a href=&#34;https://github.com/intellivoid/intellivoid.spamprotection-go&#34;&gt;SpamProtection API&lt;/a&gt;. Since I&amp;rsquo;m a Rustacean, I intended to make a Rust wrapper for the SpamProtection API. I knew for a fact that this wasn&amp;rsquo;t a one-man job, So I pinged &lt;a href=&#34;https://github.com/perosar&#34;&gt;Pero&lt;/a&gt; regarding this and he was interested in it too.&lt;/p&gt;
+&lt;p&gt;Then, Intellivoid server faced a data corruption in which all their services went down for about 2 months. There was no progress in that 2 months. After 2 months, their services slowly started coming up and then at one point the API got up. What we did is that we started development of spb-rs. We initially made the request to the api via reqwest but we didn&amp;rsquo;t parse the JSON output. So Pero came with an idea to parse the JSON by declaring structs.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<p>It all started 3 months ago when <a href="https://github.com/intellivoid">Intellivoid</a> released their Go wrapper for the <a href="https://github.com/intellivoid/intellivoid.spamprotection-go">SpamProtection API</a>. Since I&rsquo;m a Rustacean, I intended to make a Rust wrapper for the SpamProtection API. I knew for a fact that this wasn&rsquo;t a one-man job, So I pinged <a href="https://github.com/perosar">Pero</a> regarding this and he was interested in it too.</p>
 <p>Then, Intellivoid server faced a data corruption in which all their services went down for about 2 months. There was no progress in that 2 months. After 2 months, their services slowly started coming up and then at one point the API got up. What we did is that we started development of spb-rs. We initially made the request to the api via reqwest but we didn&rsquo;t parse the JSON output. So Pero came with an idea to parse the JSON by declaring structs.</p>
 <p>Pero made the initial base of the code with structs and all and pushed it to our <a href="https://github.com/cyberknight777/spamprotection-rs">repo</a>. Then I started declaring more methods and structs for ease of use. We worked on it for about 2 days straight till we got it stable and working.</p>
@@ -131,7 +133,8 @@ Then, Intellivoid server faced a data corruption in which all their services wen
             <pubDate>Mon, 06 Sep 2021 02:50:39 +0800</pubDate>
             
             <guid>https://cyberknight777.dev/posts/2021/09/how-to-rebase-a-kernel/</guid>
-            <description>Introduction Well, I was feeling bored so I was chatting with a dude called Anurag in a group called DEs/WMs regarding android kernels then he told me how his kernel was underperforming even after ricing it alot. I suggested him to rebase his kernel and he said he was unclear about the mentioned topic, so I wrote a long message onto how one can rebase a kernel and I thought that I should write it as a post in my site.</description>
+            <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Well, I was feeling bored so I was chatting with a dude called &lt;a href=&#34;https://t.me/anuragroy&#34;&gt;Anurag&lt;/a&gt; in a group called &lt;a href=&#34;https://t.me/de_wm&#34;&gt;DEs/WMs&lt;/a&gt; regarding android kernels then he told me how his kernel was underperforming even after ricing it alot. I suggested him to rebase his kernel and he said he was unclear about the mentioned topic, so I wrote a long message onto how one can rebase a kernel and I thought that I should write it as a post in my site. So here I am writing this small guide at 04:30 in the morning.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
 <p>Well, I was feeling bored so I was chatting with a dude called <a href="https://t.me/anuragroy">Anurag</a> in a group called <a href="https://t.me/de_wm">DEs/WMs</a> regarding android kernels then he told me how his kernel was underperforming even after ricing it alot. I suggested him to rebase his kernel and he said he was unclear about the mentioned topic, so I wrote a long message onto how one can rebase a kernel and I thought that I should write it as a post in my site. So here I am writing this small guide at 04:30 in the morning.</p>
 <h2 id="what-is-rebasing-a-kernel">What is rebasing a kernel</h2>
@@ -187,7 +190,9 @@ index 4c3b137a7000..d588668d76a8 100644
             <pubDate>Fri, 03 Sep 2021 01:22:03 +0800</pubDate>
             
             <guid>https://cyberknight777.dev/posts/2021/09/my-first-post/</guid>
-            <description>Hiya Welcome to my first post This site was generated using Hugo.</description>
+            <description>&lt;h1 id=&#34;hiya&#34;&gt;Hiya&lt;/h1&gt;
+&lt;h3 id=&#34;welcome-to-my-first-post&#34;&gt;Welcome to my first post&lt;/h3&gt;
+&lt;p&gt;This site was generated using Hugo.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<h1 id="hiya">Hiya</h1>
 <h3 id="welcome-to-my-first-post">Welcome to my first post</h3>
 <p>This site was generated using Hugo.</p>
