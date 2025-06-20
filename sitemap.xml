@@ -3,7 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://cyberknight777.dev/</loc>
-    <lastmod>2021-11-11T00:59:20+08:00</lastmod>
+    <lastmod>2025-06-20T23:14:52+08:00</lastmod>
+  </url><url>
+    <loc>https://cyberknight777.dev/posts/2025/06/git-tips-and-tricks-part-2/</loc>
+    <lastmod>2025-06-20T23:14:52+08:00</lastmod>
+  </url><url>
+    <loc>https://cyberknight777.dev/posts/</loc>
+    <lastmod>2025-06-20T23:14:52+08:00</lastmod>
   </url><url>
     <loc>https://cyberknight777.dev/downloads/</loc>
     <lastmod>2021-11-11T00:59:20+08:00</lastmod>
@@ -15,9 +21,6 @@
     <lastmod>2021-10-05T20:29:23+08:00</lastmod>
   </url><url>
     <loc>https://cyberknight777.dev/posts/2021/09/git-tips-and-tricks-part-1/</loc>
-    <lastmod>2021-09-19T21:38:28+08:00</lastmod>
-  </url><url>
-    <loc>https://cyberknight777.dev/posts/</loc>
     <lastmod>2021-09-19T21:38:28+08:00</lastmod>
   </url><url>
     <loc>https://cyberknight777.dev/posts/2021/09/in-the-making-spamprotection-rs/</loc>

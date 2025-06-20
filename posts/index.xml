@@ -5,8 +5,149 @@
         <description>Recent content in Posts on Cyber Knight</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Sun, 19 Sep 2021 21:38:28 +0800</lastBuildDate>
+        <lastBuildDate>Fri, 20 Jun 2025 23:14:52 +0800</lastBuildDate>
         <atom:link href="https://cyberknight777.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Git - Tips and Tricks [PART 2]</title>
+            <link>https://cyberknight777.dev/posts/2025/06/git-tips-and-tricks-part-2/</link>
+            <pubDate>Fri, 20 Jun 2025 23:14:52 +0800</pubDate>
+            
+            <guid>https://cyberknight777.dev/posts/2025/06/git-tips-and-tricks-part-2/</guid>
+            <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;It has been 4 years since my last tips and tricks post for Git, thus it is time to make a part 2 expanding upon more git functionalities that are useful and should be known by the masses.&lt;/p&gt;
+&lt;h3 id=&#34;getting-a-list-of-commit-hashes&#34;&gt;Getting a list of commit hashes&lt;/h3&gt;
+&lt;p&gt;For example, if you have made a number of changes and you want to rebase those changes off of another branch but you&amp;rsquo;re like me and you don&amp;rsquo;t prefer to use &lt;code&gt;git rebase&lt;/code&gt;, then you may try the command below to get the list of commit hashes of the changes you&amp;rsquo;ve made.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
+<p>It has been 4 years since my last tips and tricks post for Git, thus it is time to make a part 2 expanding upon more git functionalities that are useful and should be known by the masses.</p>
+<h3 id="getting-a-list-of-commit-hashes">Getting a list of commit hashes</h3>
+<p>For example, if you have made a number of changes and you want to rebase those changes off of another branch but you&rsquo;re like me and you don&rsquo;t prefer to use <code>git rebase</code>, then you may try the command below to get the list of commit hashes of the changes you&rsquo;ve made.</p>
+<ul>
+<li>First and foremost you need two things, commit hash of the last commit you made and the commit hash of the commit BEFORE the first commit you made. Then you can proceed to do this:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git log --oneline lastcommithash...beforefirstcommithash --format<span style="color:#f92672">=</span>%H --reverse
+</span></span></code></pre></div><p>Explanation: This will provide a list of commit hashes in a reversed order (as in it will show the first commit hash to the last commit hash). %H stands for full hash, you can get an abbreviated list by passing %h instead.</p>
+<h3 id="rerere">Rerere</h3>
+<p>Rerere is a hidden functionality in git that stands for &ldquo;reuse recorded resolution&rdquo;, which means it caches your conflict resolutions and automatically applies said resolutions when you have a similar conflict again. This is a very useful feature that specifically helps with merges.</p>
+<ul>
+<li>To enable it globally, all you&rsquo;d have to do is this:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git config --global rerere.enabled true
+</span></span></code></pre></div><p>Explanation: This sets rerere to be enabled by default in .gitconfig.</p>
+<ul>
+<li>If you want to perform a massive merge but you do not want to deal with the conflicts and you have a reference repo that has already dealt with the conflicts, you can make your life easier by simply:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone referencerepo ref
+</span></span><span style="display:flex;"><span>cd ref
+</span></span><span style="display:flex;"><span>wget https://github.com/git/git/raw/master/contrib/rerere-train.sh
+</span></span><span style="display:flex;"><span>chmod +x rerere-train.sh
+</span></span><span style="display:flex;"><span>./rerere-train.sh
+</span></span><span style="display:flex;"><span>cp -r .git/rr-cache /path/to/your/repo/.git/
+</span></span></code></pre></div><p>Explanation: With this you have copied the recorded resolution cache to your repo and when you attempt to do the massive merge, it will resolve almost every similar conflict there is.</p>
+<h3 id="strip-history">Strip history</h3>
+<p>This is useful in the event where you need to push a repo but the commit history is too large / is LFS-bound.</p>
+<ul>
+<li>You can strip the history down to one commit to be able to push it by doing this:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git reset <span style="color:#66d9ef">$(</span>git commit-tree HEAD^<span style="color:#f92672">{</span>tree<span style="color:#f92672">}</span> -m <span style="color:#e6db74">&#34;stripped import&#34;</span><span style="color:#66d9ef">)</span>
+</span></span></code></pre></div><p>Explanation: This strips the entire commit history to one commit called stripped import.</p>
+<h3 id="format-patch">Format patch</h3>
+<p>Sometimes you may want to get .patch files of the commits you&rsquo;ve made, you can do that by using <code>git format-patch</code>.</p>
+<ul>
+<li>To get one particular commit as a .patch:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git format-patch -1 commitHash
+</span></span></code></pre></div><ul>
+<li>To get a list of commits as .patch files:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git format-patch commitHash
+</span></span></code></pre></div><ul>
+<li>To print out the list of commits to stdout:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git format-patch commitHash --stdout
+</span></span></code></pre></div><p>You can extend this to save to a file by doing <code>&gt; name.patch</code>.</p>
+<h3 id="stash">Stash</h3>
+<p>Sometimes you&rsquo;re making some changes but you want to store it and work on something new. You can do that via <code>git stash</code>.</p>
+<ul>
+<li>To stash current changes:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git stash
+</span></span></code></pre></div><ul>
+<li>To view files of stashed changes:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git stash show
+</span></span></code></pre></div><ul>
+<li>To view actual stashed changes:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git stash show -p
+</span></span></code></pre></div><ul>
+<li>To apply stashed changes:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git stash apply
+</span></span></code></pre></div><ul>
+<li>To clear stashed changes:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git stash clear
+</span></span></code></pre></div><h3 id="checkout">Checkout</h3>
+<p>I&rsquo;m not gonna talk about the basics of checkout but I will showcase 2 cool ways to use it.</p>
+<ul>
+<li>To checkout a file from a different commit hash:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git checkout commitHash /path/to/file
+</span></span></code></pre></div><ul>
+<li>To checkout and create a new branch:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git checkout FETCH_HEAD -b newbranch
+</span></span></code></pre></div><h3 id="multiple-branches-on-multiple-remotes">Multiple branches on multiple remotes</h3>
+<p>Sometimes you may have a repo that is on multiple remotes, the &ldquo;easy&rdquo; way to deal with this is to have multiple copies of the repo itself. While that solution <em>works</em>, it is not ideal.</p>
+<ul>
+<li>You can have multiple branches of the same name of multiple remotes with differing histories by doing this:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git remote add newremote link.git
+</span></span><span style="display:flex;"><span>git fetch newremote foo
+</span></span><span style="display:flex;"><span>git checkout FETCH_HEAD -b foo-new
+</span></span><span style="display:flex;"><span>git config push.default upstream
+</span></span><span style="display:flex;"><span>git config branch.autoSetupMerge
+</span></span><span style="display:flex;"><span>git commit --allow-empty -m <span style="color:#e6db74">&#34;test&#34;</span>
+</span></span><span style="display:flex;"><span>git push -u newremote foo-new:foo
+</span></span></code></pre></div><p>Explanation: This fetches the branch from a new remote which has the same branch name as your current remote, checks out to it and creates a new branch name and then configures push.default to push to the remote that it was pulled from i.e newremote. Then, it configures branch.autoSetupMerge for git to acknowledge that git pull will pull from the remote that it was originally pulled from instead of origin. Finally, it sets up the remote for the new branch name to push to the upstream branch name to not create a new branch unnecessarily.</p>
+<h3 id="large-file-storage-lfs">Large File Storage (LFS)</h3>
+<p>Dealing with LFS blobs in repos can be a tad bit tedious and confusing. I will showcase some commands that are useful in this case.</p>
+<ul>
+<li>To setup LFS in your repo:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git lfs install
+</span></span><span style="display:flex;"><span>git lfs track /path/to/largefile
+</span></span></code></pre></div><p>Explanation: This installs global hooks for LFS and tracks the large file in a .gitattributes file in the repo.</p>
+<ul>
+<li>To find what file is a largefile that prevents pushing normally, you need the blob id to do this:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git ls-tree -r HEAD | grep $BLOB_ID
+</span></span></code></pre></div><p>Explanation: This shows you the exact largefile for you to track via LFS.</p>
+<ul>
+<li>To check all largefiles and to get the blob id you can do this:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git lfs ls-files
+</span></span></code></pre></div><h3 id="rm">Rm</h3>
+<p>Sometimes you may want to remove a file and commit it, usually you would <code>rm /path/to/file &amp;&amp; git add /path/to/file</code>, but you can simply use <code>git rm</code>.</p>
+<p>There is no need to showcase how it works as it is merely the same as regular rm except it stages the files/directories that you have removed.</p>
+<h3 id="reflog">Reflog</h3>
+<p>In some cases, after rewriting history by rebasing, you may want to check your previous HEAD as to what exactly the list of commits in there had.</p>
+<ul>
+<li>You can check the history of what you have amended, rebased and dropped, edited and so on by doing this:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git reflog
+</span></span></code></pre></div><h3 id="regular-expression-with-git">Regular Expression with git</h3>
+<p>Sometimes you may want to perform a regex on multiple files on a repo.</p>
+<ul>
+<li>You can perform a regex with an iteration of this:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git grep -l foo | xargs sed -i <span style="color:#e6db74">&#39;s/foo/bar/g&#39;</span>
+</span></span></code></pre></div><p>Explanation: This will grep through the repository for the word foo and list the filenames including the path to it and then pipe it to sed to perform a regular expression.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>For the moment, this is more than enough for a part 2, perhaps I would work on a part 3 someday in the near future.</p>
+]]></content>
+        </item>
         
         <item>
             <title>Git - Tips and Tricks [PART 1]</title>

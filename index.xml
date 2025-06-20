@@ -9,10 +9,33 @@
     <description>Recent content on Cyber Knight</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 11 Nov 2021 00:59:20 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Jun 2025 23:14:52 +0800</lastBuildDate>
     
 	<atom:link href="https://cyberknight777.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Git - Tips and Tricks [PART 2]</title>
+      <link>https://cyberknight777.dev/posts/2025/06/git-tips-and-tricks-part-2/</link>
+      <pubDate>Fri, 20 Jun 2025 23:14:52 +0800</pubDate>
+      
+      <guid>https://cyberknight777.dev/posts/2025/06/git-tips-and-tricks-part-2/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;It has been 4 years since my last tips and tricks post for Git, thus it is time to make a part 2 expanding upon more git functionalities that are useful and should be known by the masses.&lt;/p&gt;
+&lt;h3 id=&#34;getting-a-list-of-commit-hashes&#34;&gt;Getting a list of commit hashes&lt;/h3&gt;
+&lt;p&gt;For example, if you have made a number of changes and you want to rebase those changes off of another branch but you&amp;rsquo;re like me and you don&amp;rsquo;t prefer to use &lt;code&gt;git rebase&lt;/code&gt;, then you may try the command below to get the list of commit hashes of the changes you&amp;rsquo;ve made.&lt;/p&gt;
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>Release Candidate 1 For OP7</title>
