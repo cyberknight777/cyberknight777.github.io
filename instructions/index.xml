@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Instructions on Cyber Knight</title>
+    
+    
+    
+    <link>https://cyberknight777.dev/instructions/</link>
+    <description>Recent content in Instructions on Cyber Knight</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 24 Sep 2025 17:02:11 +0800</lastBuildDate>
+    
+	<atom:link href="https://cyberknight777.dev/instructions/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Motorola G54/G64 5G Custom ROM Guide</title>
+      <link>https://cyberknight777.dev/instructions/cancunf/</link>
+      <pubDate>Wed, 24 Sep 2025 17:02:11 +0800</pubDate>
+      
+      <guid>https://cyberknight777.dev/instructions/cancunf/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Before we begin, let me make it perfectly clear that,&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/* Your warranty is now void.
+*
+* I am not responsible for bricked devices, dead SD cards,
+* thermonuclear war, or you getting fired because the alarm app failed. Please
+* do some research if you have any concerns about features included in this ROM
+* before flashing it! YOU are choosing to make these modifications, and if
+* you point the finger at me for messing up your device, I will laugh at you.
+*/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;as well as the fact that this guide is only meant to be followed for &lt;strong&gt;Android 16 ROMs (and newer) which are based off of Android 15 Firmware.&lt;/strong&gt;&lt;/p&gt;
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>
