@@ -46,7 +46,7 @@
 /* Your warranty is now void. * * I am not responsible for bricked devices, dead SD cards, * thermonuclear war, or you getting fired because the alarm app failed. Please * do some research if you have any concerns about features included in this ROM * before flashing it! YOU are choosing to make these modifications, and if * you point the finger at me for messing up your device, I will laugh at you. */ as well as the fact that this guide is only meant to be followed for Android 16 ROMs (and newer) which are based off of Android 15 Firmware.">
   <meta itemprop="datePublished" content="2025-09-24T17:02:11+08:00">
   <meta itemprop="dateModified" content="2025-09-24T17:02:11+08:00">
-  <meta itemprop="wordCount" content="894">
+  <meta itemprop="wordCount" content="1133">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Motorola G54/G64 5G Custom ROM Guide">
@@ -154,6 +154,7 @@
         <li><a href="#flash-the-initial-install-zip">Flash the initial install zip</a></li>
         <li><a href="#format-data">Format Data</a></li>
         <li><a href="#flash-roms">Flash ROMs</a></li>
+        <li><a href="#updating-to-a-newer-build">Updating to a newer build</a></li>
       </ul>
     </li>
   </ul>
@@ -220,7 +221,7 @@
 </ul>
 <p>e.g: YAAP-16-Banshee-cancunf-20250929.zip and yaap_cancunf_initial_install.zip</p>
 <p>The initial install zip has the boot, vendor_boot and vendor_dlkm images bundled together.</p>
-<p><strong>You don’t need to `fill your slots` or `flash Android 15 stock` beforehand, as the ROMs already bundle Android 15 firmware, unless your device is on anything older than Android 14 May 2024 stock (U1TDS34.94-12-7-5), in which case you’ll need to re-flash the same ROM to ensure both slots have post-ARB firmware.</strong></p>
+<p><strong>You don’t need to `fill your slots` or `flash Android 15 stock` beforehand, as the ROMs already bundle Android 15 firmware, unless your device is on anything older than Android 14 May 2024 stock (U1TDS34.94-12-7-5), in which case you’ll need to re-flash the same ROM (without formatting data) to ensure both slots have post-ARB firmware.</strong></p>
 <h3 id="flash-the-initial-install-zip">Flash the initial install zip</h3>
 <p>Turn off your device, push and hold the power and volume button at the same time and release once the phone has booted into the Bootloader Mode.</p>
 <p>Open a Terminal / Command Prompt / PowerShell Terminal and run <code>fastboot reboot fastboot</code>.</p>
@@ -237,6 +238,18 @@
 <p>e.g:</p>
 <pre tabindex="0"><code>adb sideload YAAP-16-Banshee-cancunf-20250929.zip
 </code></pre><p>Once the process has been completed without any errors, proceed to reboot your device into your newly flashed ROM :)</p>
+<h3 id="updating-to-a-newer-build">Updating to a newer build</h3>
+<p>To update to a newer build, you start by downloading the ROM zip and then you have two options:</p>
+<h4 id="flashing-via-the-built-in-updater">Flashing via the built-in Updater</h4>
+<p>To flash via the built-in Updater:</p>
+<p>On ROMs that are in an Official status, they typically provide OTA updates. So, you can just go to the Updater and click Flash.</p>
+<p>On ROMs that are not in an Official status but provide an Updater that has a <strong>Local Update</strong> option, you can download the ROM zip in your phone and click <strong>Local Update</strong> then choose the downloaded file to start the update process.</p>
+<p>Once you have done either one of those things, you can reboot to boot into your newly updated ROM :)</p>
+<h4 id="sideloading-in-recovery">Sideloading in recovery</h4>
+<p>To sideload in recovery, first you turn off your device, push and hold the power and volume button at the same time and release once the phone has booted into the Bootloader Mode.</p>
+<p>Open a Terminal / Command Prompt / PowerShell Terminal and run <code>fastboot reboot recovery</code>.</p>
+<p>Then, choose the <strong>Apply update from ADB / Apply update -&gt; Apply update from ADB / Install update -&gt; ADB Sideload</strong> option on your device and then type <code>adb sideload </code> in the Terminal and then drag-and-drop the ROM zip into the terminal and run it.</p>
+<p>Once the process has been completed without any errors, proceed to reboot your device into your newly updated ROM :)</p>
 
             </div>
         </article>
