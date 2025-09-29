@@ -201,8 +201,8 @@ YOU are choosing to make these modifications, and if you point the finger at me 
 (bootloader) 0000000
 </code></pre><h3 id="getting-unlock-token">Getting Unlock Token</h3>
 <p>To generate the unlock token, you&rsquo;ll need to merge the 5 lines of output into one string without any extra spaces or additional text. An example of that would be:</p>
-<p><code>0A40040192024205#4C4D355631323030373731363031303332323239#BD008A672BA4746C2CE02328A2AC0C39F951A3E5#1F532800020000000000000000000000</code></p>
-<p>Then, go to the <a href="https://en-us.support.motorola.com/app/standalone/bootloader/unlock-your-device-b">Motorola Unlock Website</a>. Login to your account and paste the <strong>Device ID</strong> string and click on <strong>Can my device be unlocked?</strong> to check eligibility for unlock, then accept the legal agreement and click on <strong>Request Unlock key</strong>.</p>
+<pre tabindex="0"><code>0A40040192024205#4C4D355631323030373731363031303332323239#BD008A672BA4746C2CE02328A2AC0C39F951A3E5#1F532800020000000000000000000000
+</code></pre><p>Then, go to the <a href="https://en-us.support.motorola.com/app/standalone/bootloader/unlock-your-device-b">Motorola Unlock Website</a>. Login to your account and paste the <strong>Device ID</strong> string and click on <strong>Can my device be unlocked?</strong> to check eligibility for unlock, then accept the legal agreement and click on <strong>Request Unlock key</strong>.</p>
 <p>You will then receive an email with your Unlock Token. Check your spam folder if you had not received it. Within the email would contain a unique 20-character, alphanumeric code that you will use to unlock your device.</p>
 <h3 id="unlock-process">Unlock process</h3>
 <p>Type <code>fastboot oem unlock </code> and paste your unique 20-character, alphanumeric code that you have received via email and run it.</p>
