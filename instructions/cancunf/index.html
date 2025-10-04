@@ -46,7 +46,7 @@ Your warranty is now void. I am not responsible for bricked devices, dead SD car
 Your warranty is now void. I am not responsible for bricked devices, dead SD cards, thermonuclear war, or you getting fired because the alarm app failed. Please do some research if you have any concerns about features included in this ROM before flashing it! YOU are choosing to make these modifications, and if you point the finger at me for messing up your device, I will laugh at you. as well as the fact that this guide is only meant to be followed for Android 16 ROMs (and newer) which are based off of Android 15 Firmware.">
   <meta itemprop="datePublished" content="2025-09-24T17:02:11+08:00">
   <meta itemprop="dateModified" content="2025-09-24T17:02:11+08:00">
-  <meta itemprop="wordCount" content="1169">
+  <meta itemprop="wordCount" content="1187">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Motorola G54/G64 5G Custom ROM Guide">
@@ -190,7 +190,9 @@ YOU are choosing to make these modifications, and if you point the finger at me 
 <p>You do that by opening a Terminal / Command Prompt / PowerShell Terminal in the folder/directory where the Platform Tools are extracted.</p>
 <p>Then, turn off your device, push and hold the power and volume down button at the same time and release once the phone has booted into the Bootloader Mode.</p>
 <p>Run <code>fastboot devices</code> to see if the device is detected.</p>
-<p>If you have installed the USB drivers properly, it will show that the device is connected.</p>
+<p>An example output would be as such:</p>
+<pre tabindex="0"><code>ZY22HZLCR2	fastboot
+</code></pre><p>If you have installed the USB drivers properly, it will show that the device is connected.</p>
 <p>Run, <code>fastboot oem get_unlock_data</code> to get the Device ID.</p>
 <p>e.g:</p>
 <pre tabindex="0"><code>(bootloader) Unlock data:
@@ -224,7 +226,9 @@ YOU are choosing to make these modifications, and if you point the finger at me 
 <p>Turn off your device, push and hold the power and volume down button at the same time and release once the phone has booted into the Bootloader Mode.</p>
 <p>Open a Terminal / Command Prompt / PowerShell Terminal and run <code>fastboot reboot fastboot</code>.</p>
 <p>Once the phone has booted into the FastbootD Mode, run <code>fastboot devices</code> to see if the device is detected.</p>
-<p>If it is not detected, you should re-read Unlocking the Bootloader part as to installing the relevant USB drivers.</p>
+<p>An example output would be as such:</p>
+<pre tabindex="0"><code>ZY22HZLCR2	fastbootd
+</code></pre><p>If it is not detected, you should re-read Unlocking the Bootloader part as to installing the relevant USB drivers.</p>
 <p>Moving on, type <code>fastboot --skip-reboot update </code> and then drag-and-drop the initial install zip into the terminal and run it.</p>
 <p>e.g:</p>
 <pre tabindex="0"><code>fastboot --skip-reboot update yaap_banshee_cancunf_initial_install.zip
