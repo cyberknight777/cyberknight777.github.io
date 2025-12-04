@@ -9,10 +9,30 @@
     <description>Recent content on Cyber Knight</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 24 Sep 2025 17:02:11 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 05 Dec 2025 00:01:37 +0800</lastBuildDate>
     
 	<atom:link href="https://cyberknight777.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Why no TWRP on modern devices?</title>
+      <link>https://cyberknight777.dev/posts/2025/12/why-no-twrp-on-modern-devices/</link>
+      <pubDate>Fri, 05 Dec 2025 00:01:37 +0800</pubDate>
+      
+      <guid>https://cyberknight777.dev/posts/2025/12/why-no-twrp-on-modern-devices/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          &lt;p&gt;The reason why custom recoveries such as TWRP are obsolete in modern devices is because the practicality of it is inexistent. For example 90% of modern devices do not have a separate recovery partition, rather they use the vendor_boot partition for it. This makes utilizing a custom recovery a tedious process due to the fact that the recovery environment is not completely isolated thus a bootloop is tricky to get out of as you cannot boot into system nor recovery and you cannot flash images all the time in bootloader due to preflash validation error (on motorola specifically). Moreover, with Virtual A/B partitioning system it makes updating the ROM itself a tedious process as back in the day of A-only partitioning system, you can opt not to &amp;ldquo;include&amp;rdquo; the recovery of the ROM within the build but you cannot do it on modern devices.&lt;/p&gt;
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>Motorola G54/G64 5G Custom ROM Guide</title>
