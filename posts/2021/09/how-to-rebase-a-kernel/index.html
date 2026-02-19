@@ -179,12 +179,12 @@
 <h3 id="importing-oem-changes">Importing OEM changes</h3>
 <p><strong>Remember, If your OEM kernel source is a Q base, use a Q base kernel from CAF or ACK. Do not use a R base kernel for Q based OEM kernel as it would not work and would throw alot of git conflicts!</strong></p>
 <p>Let&rsquo;s say your OEM releases their kernel source code in <a href="https://github.com">GitHub</a>, the easiest way you can import their changes would be to merge their kernel source. This is an example of how a OnePlus 7 kernel source code for R can be merged on a CAF base.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git fetch https://github.com/oneplusoss/android_kernel_oneplus_sm8150 oneplus/SM8150_R_10.0
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git fetch https://github.com/oneplusoss/android_kernel_oneplus_sm8150 oneplus/SM8150_R_10.0
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>git merge FETCH_HEAD
 </span></span></code></pre></div><p>Then of course, you&rsquo;ll have some git conflicts in which you should have the knowledge to compare and fix it.</p>
 <p><strong>Keep in mind there are some OEMs that release some important drivers in a seperate repository so merge them like I do below for my audio driver.</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git fetch https://github.com/OnePlusOSS/android_vendor_qcom_opensource_audio_kernel_sm8150 oneplus/SM8150_R_10.0
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git fetch https://github.com/OnePlusOSS/android_vendor_qcom_opensource_audio_kernel_sm8150 oneplus/SM8150_R_10.0
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>git merge -s ours --no-commit --allow-unrelated-histories --squash FETCH_HEAD
 </span></span></code></pre></div><p>Once that is done, you can start building your kernel and fixing mismerges if any. There is an alternative way to import oem changes manually with better commit history. You can read more about it <strong><a href="https://t.me/LinuxKernelNewbies/183745">here</a></strong>.</p>

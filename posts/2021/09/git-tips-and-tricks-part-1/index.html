@@ -172,32 +172,32 @@ Making commits It is wise for one to make proper commit history for their projec
 <ul>
 <li>Let&rsquo;s say you&rsquo;ve made a commit but there&rsquo;s a typo in the commit message, what you can do is use the <code>--amend</code> option in git. The syntax goes as below:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git commit --amend -m <span style="color:#e6db74">&#34;new commit message&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git commit --amend -m <span style="color:#e6db74">&#34;new commit message&#34;</span>
 </span></span></code></pre></div><ul>
 <li>Next, let&rsquo;s say you would want to add a co-author to your commit, here&rsquo;s how one would do it:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;your commit message&#34;</span> -m <span style="color:#e6db74">&#34;Co-authored-by: name &lt;name@mail.com&gt;&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;your commit message&#34;</span> -m <span style="color:#e6db74">&#34;Co-authored-by: name &lt;name@mail.com&gt;&#34;</span>
 </span></span></code></pre></div><ul>
 <li>Maybe you are using someone else&rsquo;s work and you do want to add author, the best way for this would be to use the <code>--author</code> option. Here&rsquo;s how it goes:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;your commit message&#34;</span> --author <span style="color:#e6db74">&#34;name &lt;name@mail.com&gt;&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;your commit message&#34;</span> --author <span style="color:#e6db74">&#34;name &lt;name@mail.com&gt;&#34;</span>
 </span></span></code></pre></div><h3 id="fixing-commit-history">Fixing commit history</h3>
 <ul>
 <li>Let&rsquo;s say you&rsquo;ve made some bad commits and would like to erase it, I&rsquo;d suggest resetting hard and force pushing. Get the commit hash of the commit before the messed up commits and run this command:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git reset --hard commitHash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git reset --hard commitHash
 </span></span></code></pre></div><ul>
 <li>Then you can either make proper commits and/or force push by this:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git push -f
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git push -f
 </span></span></code></pre></div><ul>
 <li>You can also squash your commits and force push. With the commit hash of the commit before the messed up commits, run this command:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git rebase -i commitHash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git rebase -i commitHash
 </span></span></code></pre></div><ul>
 <li>Then you probably would end up in vim(in my case that&rsquo;s my preferred editor for git). In vim, you can do this:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span>:%<span style="color:#a6e22e">s</span><span style="color:#e6db74">/pick/</span><span style="color:#a6e22e">squash</span>/<span style="color:#a6e22e">g</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span>:%<span style="color:#a6e22e">s</span><span style="color:#e6db74">/pick/</span><span style="color:#a6e22e">squash</span>/<span style="color:#a6e22e">g</span>
 </span></span></code></pre></div><ul>
 <li>
 <p>If you&rsquo;re using any other editor, find out if there&rsquo;s any regex features in your editor or just manually swap it to squash.</p>
@@ -217,42 +217,42 @@ Making commits It is wise for one to make proper commit history for their projec
 <ul>
 <li>For looking at the commit history in general you can do this:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git log
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git log
 </span></span></code></pre></div><ul>
 <li>For looking at the commit history in a oneliner you can do this:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git log --oneline
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git log --oneline
 </span></span></code></pre></div><ul>
 <li>For looking at the commit history and the content of each commits:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git log -p
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git log -p
 </span></span></code></pre></div><ul>
 <li>For looking at the commit content of a specific commit:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git show commitHash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git show commitHash
 </span></span></code></pre></div><h3 id="picking-commits-from-other-repositories">Picking commits from other repositories</h3>
 <p>You can pick commmits from other repositories in several ways. You can either fetch the repository and pick it or wget the commit as a patch and apply it with <code>git am</code>.</p>
 <ul>
 <li>To fetch the repository and pick a couple of commits, first fetch the repo and then grab the commit hash of the commit before the HEAD of the commit you wanna pick and the commit hash before the first commit you would want to pick. Here&rsquo;s how it goes:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git fetch https://linktorepo.com branch
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git fetch https://linktorepo.com branch
 </span></span><span style="display:flex;"><span>git cherry-pick startHash^...endHash
 </span></span></code></pre></div><ul>
 <li>To pick one commit from a repository, you&rsquo;ll need to wget it as a patch, I&rsquo;m sure most Git repository hosting services have the option to download commits as patches. So here&rsquo;s how it&rsquo;d go:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wget https://linktopatch.com/xyz.patch
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wget https://linktopatch.com/xyz.patch
 </span></span><span style="display:flex;"><span>git am xyz.patch
 </span></span></code></pre></div><h3 id="merging-branchestags">Merging branches/tags</h3>
 <p>You can merge branches or tags from other repositories by either fetching and merging them or directly merging them. In my opinion, there&rsquo;s hardly any difference between fetching and merging vs directly merging them.</p>
 <ul>
 <li>To merge a branch/tag of a specific repository by fetching and merging it:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git fetch https://linktorepo.com branch/tag
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git fetch https://linktorepo.com branch/tag
 </span></span><span style="display:flex;"><span>git merge FETCH_HEAD
 </span></span></code></pre></div><ul>
 <li>To merge a branch/tag of a specific repository by directly merging it:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git pull https://linktorepo.com branch/tag
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git pull https://linktorepo.com branch/tag
 </span></span></code></pre></div><h2 id="conclusion">Conclusion</h2>
 <p>At this point, I believe I can write more but it would be better to split it into a 2nd post. Hope this post helped and stay tuned for the 2nd post :)</p>
 

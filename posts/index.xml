@@ -41,19 +41,19 @@
 <ul>
 <li>First and foremost you need two things, commit hash of the last commit you made and the commit hash of the commit BEFORE the first commit you made. Then you can proceed to do this:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git log --oneline lastcommithash...beforefirstcommithash --format<span style="color:#f92672">=</span>%H --reverse
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git log --oneline lastcommithash...beforefirstcommithash --format<span style="color:#f92672">=</span>%H --reverse
 </span></span></code></pre></div><p>Explanation: This will provide a list of commit hashes in a reversed order (as in it will show the first commit hash to the last commit hash). %H stands for full hash, you can get an abbreviated list by passing %h instead.</p>
 <h3 id="rerere">Rerere</h3>
 <p>Rerere is a hidden functionality in git that stands for &ldquo;reuse recorded resolution&rdquo;, which means it caches your conflict resolutions and automatically applies said resolutions when you have a similar conflict again. This is a very useful feature that specifically helps with merges.</p>
 <ul>
 <li>To enable it globally, all you&rsquo;d have to do is this:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git config --global rerere.enabled true
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git config --global rerere.enabled true
 </span></span></code></pre></div><p>Explanation: This sets rerere to be enabled by default in .gitconfig.</p>
 <ul>
 <li>If you want to perform a massive merge but you do not want to deal with the conflicts and you have a reference repo that has already dealt with the conflicts, you can make your life easier by simply:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone referencerepo ref
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone referencerepo ref
 </span></span><span style="display:flex;"><span>cd ref
 </span></span><span style="display:flex;"><span>wget https://github.com/git/git/raw/master/contrib/rerere-train.sh
 </span></span><span style="display:flex;"><span>chmod +x rerere-train.sh
@@ -65,61 +65,61 @@
 <ul>
 <li>You can strip the history down to one commit to be able to push it by doing this:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git reset <span style="color:#66d9ef">$(</span>git commit-tree HEAD^<span style="color:#f92672">{</span>tree<span style="color:#f92672">}</span> -m <span style="color:#e6db74">&#34;stripped import&#34;</span><span style="color:#66d9ef">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git reset <span style="color:#66d9ef">$(</span>git commit-tree HEAD^<span style="color:#f92672">{</span>tree<span style="color:#f92672">}</span> -m <span style="color:#e6db74">&#34;stripped import&#34;</span><span style="color:#66d9ef">)</span>
 </span></span></code></pre></div><p>Explanation: This strips the entire commit history to one commit called stripped import.</p>
 <h3 id="format-patch">Format patch</h3>
 <p>Sometimes you may want to get .patch files of the commits you&rsquo;ve made, you can do that by using <code>git format-patch</code>.</p>
 <ul>
 <li>To get one particular commit as a .patch:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git format-patch -1 commitHash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git format-patch -1 commitHash
 </span></span></code></pre></div><ul>
 <li>To get a list of commits as .patch files:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git format-patch commitHash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git format-patch commitHash
 </span></span></code></pre></div><ul>
 <li>To print out the list of commits to stdout:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git format-patch commitHash --stdout
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git format-patch commitHash --stdout
 </span></span></code></pre></div><p>You can extend this to save to a file by doing <code>&gt; name.patch</code>.</p>
 <h3 id="stash">Stash</h3>
 <p>Sometimes you&rsquo;re making some changes but you want to store it and work on something new. You can do that via <code>git stash</code>.</p>
 <ul>
 <li>To stash current changes:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git stash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git stash
 </span></span></code></pre></div><ul>
 <li>To view files of stashed changes:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git stash show
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git stash show
 </span></span></code></pre></div><ul>
 <li>To view actual stashed changes:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git stash show -p
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git stash show -p
 </span></span></code></pre></div><ul>
 <li>To apply stashed changes:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git stash apply
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git stash apply
 </span></span></code></pre></div><ul>
 <li>To clear stashed changes:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git stash clear
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git stash clear
 </span></span></code></pre></div><h3 id="checkout">Checkout</h3>
 <p>I&rsquo;m not gonna talk about the basics of checkout but I will showcase 2 cool ways to use it.</p>
 <ul>
 <li>To checkout a file from a different commit hash:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git checkout commitHash /path/to/file
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git checkout commitHash /path/to/file
 </span></span></code></pre></div><ul>
 <li>To checkout and create a new branch:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git checkout FETCH_HEAD -b newbranch
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git checkout FETCH_HEAD -b newbranch
 </span></span></code></pre></div><h3 id="multiple-branches-on-multiple-remotes">Multiple branches on multiple remotes</h3>
 <p>Sometimes you may have a repo that is on multiple remotes, the &ldquo;easy&rdquo; way to deal with this is to have multiple copies of the repo itself. While that solution <em>works</em>, it is not ideal.</p>
 <ul>
 <li>You can have multiple branches of the same name of multiple remotes with differing histories by doing this:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git remote add newremote link.git
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git remote add newremote link.git
 </span></span><span style="display:flex;"><span>git fetch newremote foo
 </span></span><span style="display:flex;"><span>git checkout FETCH_HEAD -b foo-new
 </span></span><span style="display:flex;"><span>git config push.default upstream
@@ -132,18 +132,18 @@
 <ul>
 <li>To setup LFS in your repo:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git lfs install
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git lfs install
 </span></span><span style="display:flex;"><span>git lfs track /path/to/largefile
 </span></span></code></pre></div><p>Explanation: This installs global hooks for LFS and tracks the large file in a .gitattributes file in the repo.</p>
 <ul>
 <li>To find what file is a largefile that prevents pushing normally, you need the blob id to do this:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git ls-tree -r HEAD | grep $BLOB_ID
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git ls-tree -r HEAD | grep $BLOB_ID
 </span></span></code></pre></div><p>Explanation: This shows you the exact largefile for you to track via LFS.</p>
 <ul>
 <li>To check all largefiles and to get the blob id you can do this:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git lfs ls-files
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git lfs ls-files
 </span></span></code></pre></div><h3 id="rm">Rm</h3>
 <p>Sometimes you may want to remove a file and commit it, usually you would <code>rm /path/to/file &amp;&amp; git add /path/to/file</code>, but you can simply use <code>git rm</code>.</p>
 <p>There is no need to showcase how it works as it is merely the same as regular rm except it stages the files/directories that you have removed.</p>
@@ -152,13 +152,13 @@
 <ul>
 <li>You can check the history of what you have amended, rebased and dropped, edited and so on by doing this:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git reflog
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git reflog
 </span></span></code></pre></div><h3 id="regular-expression-with-git">Regular Expression with git</h3>
 <p>Sometimes you may want to perform a regex on multiple files on a repo.</p>
 <ul>
 <li>You can perform a regex with an iteration of this:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git grep -l foo | xargs sed -i <span style="color:#e6db74">&#39;s/foo/bar/g&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git grep -l foo | xargs sed -i <span style="color:#e6db74">&#39;s/foo/bar/g&#39;</span>
 </span></span></code></pre></div><p>Explanation: This will grep through the repository for the word foo and list the filenames including the path to it and then pipe it to sed to perform a regular expression.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>For the moment, this is more than enough for a part 2, perhaps I would work on a part 3 someday in the near future.</p>
@@ -182,32 +182,32 @@
 <ul>
 <li>Let&rsquo;s say you&rsquo;ve made a commit but there&rsquo;s a typo in the commit message, what you can do is use the <code>--amend</code> option in git. The syntax goes as below:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git commit --amend -m <span style="color:#e6db74">&#34;new commit message&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git commit --amend -m <span style="color:#e6db74">&#34;new commit message&#34;</span>
 </span></span></code></pre></div><ul>
 <li>Next, let&rsquo;s say you would want to add a co-author to your commit, here&rsquo;s how one would do it:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;your commit message&#34;</span> -m <span style="color:#e6db74">&#34;Co-authored-by: name &lt;name@mail.com&gt;&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;your commit message&#34;</span> -m <span style="color:#e6db74">&#34;Co-authored-by: name &lt;name@mail.com&gt;&#34;</span>
 </span></span></code></pre></div><ul>
 <li>Maybe you are using someone else&rsquo;s work and you do want to add author, the best way for this would be to use the <code>--author</code> option. Here&rsquo;s how it goes:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;your commit message&#34;</span> --author <span style="color:#e6db74">&#34;name &lt;name@mail.com&gt;&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;your commit message&#34;</span> --author <span style="color:#e6db74">&#34;name &lt;name@mail.com&gt;&#34;</span>
 </span></span></code></pre></div><h3 id="fixing-commit-history">Fixing commit history</h3>
 <ul>
 <li>Let&rsquo;s say you&rsquo;ve made some bad commits and would like to erase it, I&rsquo;d suggest resetting hard and force pushing. Get the commit hash of the commit before the messed up commits and run this command:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git reset --hard commitHash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git reset --hard commitHash
 </span></span></code></pre></div><ul>
 <li>Then you can either make proper commits and/or force push by this:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git push -f
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git push -f
 </span></span></code></pre></div><ul>
 <li>You can also squash your commits and force push. With the commit hash of the commit before the messed up commits, run this command:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git rebase -i commitHash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git rebase -i commitHash
 </span></span></code></pre></div><ul>
 <li>Then you probably would end up in vim(in my case that&rsquo;s my preferred editor for git). In vim, you can do this:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span>:%<span style="color:#a6e22e">s</span><span style="color:#e6db74">/pick/</span><span style="color:#a6e22e">squash</span>/<span style="color:#a6e22e">g</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span>:%<span style="color:#a6e22e">s</span><span style="color:#e6db74">/pick/</span><span style="color:#a6e22e">squash</span>/<span style="color:#a6e22e">g</span>
 </span></span></code></pre></div><ul>
 <li>
 <p>If you&rsquo;re using any other editor, find out if there&rsquo;s any regex features in your editor or just manually swap it to squash.</p>
@@ -227,42 +227,42 @@
 <ul>
 <li>For looking at the commit history in general you can do this:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git log
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git log
 </span></span></code></pre></div><ul>
 <li>For looking at the commit history in a oneliner you can do this:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git log --oneline
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git log --oneline
 </span></span></code></pre></div><ul>
 <li>For looking at the commit history and the content of each commits:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git log -p
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git log -p
 </span></span></code></pre></div><ul>
 <li>For looking at the commit content of a specific commit:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git show commitHash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git show commitHash
 </span></span></code></pre></div><h3 id="picking-commits-from-other-repositories">Picking commits from other repositories</h3>
 <p>You can pick commmits from other repositories in several ways. You can either fetch the repository and pick it or wget the commit as a patch and apply it with <code>git am</code>.</p>
 <ul>
 <li>To fetch the repository and pick a couple of commits, first fetch the repo and then grab the commit hash of the commit before the HEAD of the commit you wanna pick and the commit hash before the first commit you would want to pick. Here&rsquo;s how it goes:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git fetch https://linktorepo.com branch
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git fetch https://linktorepo.com branch
 </span></span><span style="display:flex;"><span>git cherry-pick startHash^...endHash
 </span></span></code></pre></div><ul>
 <li>To pick one commit from a repository, you&rsquo;ll need to wget it as a patch, I&rsquo;m sure most Git repository hosting services have the option to download commits as patches. So here&rsquo;s how it&rsquo;d go:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wget https://linktopatch.com/xyz.patch
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wget https://linktopatch.com/xyz.patch
 </span></span><span style="display:flex;"><span>git am xyz.patch
 </span></span></code></pre></div><h3 id="merging-branchestags">Merging branches/tags</h3>
 <p>You can merge branches or tags from other repositories by either fetching and merging them or directly merging them. In my opinion, there&rsquo;s hardly any difference between fetching and merging vs directly merging them.</p>
 <ul>
 <li>To merge a branch/tag of a specific repository by fetching and merging it:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git fetch https://linktorepo.com branch/tag
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git fetch https://linktorepo.com branch/tag
 </span></span><span style="display:flex;"><span>git merge FETCH_HEAD
 </span></span></code></pre></div><ul>
 <li>To merge a branch/tag of a specific repository by directly merging it:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git pull https://linktorepo.com branch/tag
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git pull https://linktorepo.com branch/tag
 </span></span></code></pre></div><h2 id="conclusion">Conclusion</h2>
 <p>At this point, I believe I can write more but it would be better to split it into a 2nd post. Hope this post helped and stay tuned for the 2nd post :)</p>
 ]]></content>
@@ -309,12 +309,12 @@
 <h3 id="importing-oem-changes">Importing OEM changes</h3>
 <p><strong>Remember, If your OEM kernel source is a Q base, use a Q base kernel from CAF or ACK. Do not use a R base kernel for Q based OEM kernel as it would not work and would throw alot of git conflicts!</strong></p>
 <p>Let&rsquo;s say your OEM releases their kernel source code in <a href="https://github.com">GitHub</a>, the easiest way you can import their changes would be to merge their kernel source. This is an example of how a OnePlus 7 kernel source code for R can be merged on a CAF base.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git fetch https://github.com/oneplusoss/android_kernel_oneplus_sm8150 oneplus/SM8150_R_10.0
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git fetch https://github.com/oneplusoss/android_kernel_oneplus_sm8150 oneplus/SM8150_R_10.0
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>git merge FETCH_HEAD
 </span></span></code></pre></div><p>Then of course, you&rsquo;ll have some git conflicts in which you should have the knowledge to compare and fix it.</p>
 <p><strong>Keep in mind there are some OEMs that release some important drivers in a seperate repository so merge them like I do below for my audio driver.</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git fetch https://github.com/OnePlusOSS/android_vendor_qcom_opensource_audio_kernel_sm8150 oneplus/SM8150_R_10.0
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git fetch https://github.com/OnePlusOSS/android_vendor_qcom_opensource_audio_kernel_sm8150 oneplus/SM8150_R_10.0
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>git merge -s ours --no-commit --allow-unrelated-histories --squash FETCH_HEAD
 </span></span></code></pre></div><p>Once that is done, you can start building your kernel and fixing mismerges if any. There is an alternative way to import oem changes manually with better commit history. You can read more about it <strong><a href="https://t.me/LinuxKernelNewbies/183745">here</a></strong>.</p>
