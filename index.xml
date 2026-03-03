@@ -9,10 +9,31 @@
     <description>Recent content on Cyber Knight</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 Dec 2025 00:01:37 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 03 Mar 2026 17:13:24 +0800</lastBuildDate>
     
 	<atom:link href="https://cyberknight777.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>What is GKI?</title>
+      <link>https://cyberknight777.dev/posts/2026/03/what-is-gki/</link>
+      <pubDate>Tue, 03 Mar 2026 17:13:24 +0800</pubDate>
+      
+      <guid>https://cyberknight777.dev/posts/2026/03/what-is-gki/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;A lot of people have been requesting a quote on quote &lt;strong&gt;proper&lt;/strong&gt; guide to work with GKI as it seems very complicated. I&amp;rsquo;m here to talk about how it &lt;em&gt;isn&amp;rsquo;t&lt;/em&gt; complicated and how it works under the hood. By the end of this post, I guarantee you will grasp the fundamentals of GKIs. For the purposes of this post, I am strictly going to talk about kernel v5.10 and newer.&lt;/p&gt;
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>Why no TWRP on modern devices?</title>
