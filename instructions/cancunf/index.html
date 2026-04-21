@@ -46,7 +46,7 @@ Your warranty is now void. I am not responsible for bricked devices, dead SD car
 Your warranty is now void. I am not responsible for bricked devices, dead SD cards, thermonuclear war, or you getting fired because the alarm app failed. Please do some research if you have any concerns about features included in this ROM before flashing it! YOU are choosing to make these modifications, and if you point the finger at me for messing up your device, I will laugh at you. as well as the fact that this guide is only meant to be followed for Android 16 ROMs (and newer) which are based off of Android 15 Firmware.">
   <meta itemprop="datePublished" content="2025-09-24T17:02:11+08:00">
   <meta itemprop="dateModified" content="2025-09-24T17:02:11+08:00">
-  <meta itemprop="wordCount" content="1299">
+  <meta itemprop="wordCount" content="1331">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Motorola G54/G64 5G Custom ROM Guide">
@@ -229,7 +229,11 @@ YOU are choosing to make these modifications, and if you point the finger at me 
 <p>Once the phone has booted into the FastbootD Mode, run <code>fastboot devices</code> to see if the device is detected.</p>
 <p>An example output would be as such:</p>
 <pre tabindex="0"><code>ZY22HZLCR2	fastbootd
-</code></pre><p>Remember, it has to say fastbootd, not fastboot. If it says fastboot, re-read the instructions again.</p>
+</code></pre><p>Some operating systems may report FastbootD Mode as fastboot as well so to properly confirm if you are in FastbootD Mode, you may run <code>fastboot getvar is-userspace</code>.</p>
+<p>An example output would be as such:</p>
+<pre tabindex="0"><code>is-userspace: yes
+Finished. Total time: 0.001s
+</code></pre><p>If it says no, re-read the instructions again.</p>
 <p>The reason why you need to be in fastbootd and not bootloader (fastboot) is because you cannot flash images in bootloader due to Motorola implementing a sort of timestamp check within the bootloader which then results in an error like such:</p>
 <pre tabindex="0"><code>Writing &#39;boot_b&#39;                                   (bootloader) Preflash validation failed
 FAILED (remote: &#39;&#39;)
