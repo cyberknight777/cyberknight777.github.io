@@ -9,10 +9,32 @@
     <description>Recent content on Cyber Knight</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Oct 2026 22:49:28 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2026 02:24:02 +0800</lastBuildDate>
     
 	<atom:link href="https://cyberknight777.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bringing an Android TV box back to life</title>
+      <link>https://cyberknight777.dev/posts/2026/11/bringing-an-android-tv-box-back-to-life/</link>
+      <pubDate>Sun, 01 Nov 2026 02:24:02 +0800</pubDate>
+      
+      <guid>https://cyberknight777.dev/posts/2026/11/bringing-an-android-tv-box-back-to-life/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;I&amp;rsquo;ve had an Android TV Box sitting around for quite some time now, stuck in what appeared to be an endless bootanimation loop. It is a Tanix TX6 with the Allwinner H6 SoC. Since I have more free time now due to &lt;a href=&#34;https://cyberknight777.dev/posts/2026/10/episode-51-kingdom-of-the-flies/&#34;&gt;Episode 51&lt;/a&gt;, I figured why not try to get it booting.&lt;/p&gt;
+&lt;p&gt;And so began a 24-hour journey of digging into unfamiliar hardware, understanding part of the bootchain, and of course, a few hair-splitting moments along the way.&lt;/p&gt;
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>Episode 51 - Kingdom of the Flies</title>
